@@ -3,20 +3,14 @@
 
     <section>
         <h3 class="browse-head"> Upcoming </h3>
-        <div class="swiper-wrapper">
-            <div class="swiper-slide">
-              <div class="thumbContainer">
-                <div class="projectInfo">
-                    <mat-card> Movie Displayed </mat-card>
-                </div>
-              </div>
-            </div>
+        <div (wheel)="onWheel($event)" id="scrollable">
+            <mat-card> Movie </mat-card>
         </div>
     </section>
 
     <section>
         <h3 class="browse-head"> Genres </h3>
-        <div> 
+        <div>
             <!-- display movies  -->
         </div>
 
@@ -24,7 +18,7 @@
 
     <section>
         <h3 class="browse-head"> Popular </h3>
-        <div> 
+        <div>
             <!-- display movies  -->
         </div>
 

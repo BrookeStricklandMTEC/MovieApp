@@ -7,4 +7,8 @@ import { Component } from '@angular/core';
 })
 export class MovieHomeComponent {
 
+
+  onWheel(event: WheelEvent): void {
+    
+ } 
 }

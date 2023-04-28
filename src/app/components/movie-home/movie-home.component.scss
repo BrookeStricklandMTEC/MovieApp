@@ -1,20 +1,32 @@
-.home-wrapper{
+.home-wrapper {
     text-align: center;
 }
-.input-movie{
+
+.input-movie {
     width: 250px;
     text-align: center;
     margin: 50px 0px 0px 0px;
 }
 
-.browse-head{
-margin: 50px 0px 50px 0px;
+.browse-head {
+    margin: 50px 0px 50px 0px;
 }
 
-mat-card{
+mat-card {
 
 
     width: 100px;
     height: 100px;
     background-color: aqua;
 }
+
+// infinite scroll
+#scrollable {
+    overflow-x: scroll;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+//
