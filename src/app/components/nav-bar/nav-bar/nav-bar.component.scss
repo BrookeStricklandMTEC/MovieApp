@@ -1,6 +1,7 @@
 .nav-wrapper {
     display: inline-flex;
     align-items: center;
+    
 
     position: sticky;
     width: 100%;
@@ -8,5 +9,5 @@
 }
 
 .nav-wrapper>a {
-    
+    display: contents;
 }
