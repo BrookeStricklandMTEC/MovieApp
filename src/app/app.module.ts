@@ -7,6 +7,7 @@ import { NavBarComponent } from './components/nav-bar/nav-bar/nav-bar.component'
 import { FavoriteMovieComponent } from './components/favorite-movie/favorite-movie.component';
 import { MovieHomeComponent } from './components/movie-home/movie-home.component';
 import { MoviesComponent } from './components/movies/movies.component';
+import { MatCardModule } from '@angular/material/card';
 
 @NgModule({
   declarations: [
@@ -14,11 +15,13 @@ import { MoviesComponent } from './components/movies/movies.component';
     NavBarComponent,
     FavoriteMovieComponent,
     MovieHomeComponent,
-    MoviesComponent
+    MoviesComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    MatCardModule,
+    
   ],
   providers: [],
   bootstrap: [AppComponent]
