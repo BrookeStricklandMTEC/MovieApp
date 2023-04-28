@@ -5,6 +5,7 @@ import { Injectable } from '@angular/core';
   // import {enviornment}
   import { Observable, map } from 'rxjs';
   import { Movie } from '../interfaces/movie';
+import { environment } from 'src/environments/environment.development';
 // 
 
 @Injectable({
@@ -18,7 +19,7 @@ export class MovieService {
 
   browseMovies(searchText: string): Observable<Movie[]>{
     const alteredText = searchText.replace(/\s/g, '+');
-    return this.http.get<Movie[]>(``).pipe(
+    return this.http.get<Movie[]>(`https://moviesdatabase.p.rapidapi.com/titles/x/titles-by-ids`).pipe(
         map((response : any) => response['games']
       )
     )
