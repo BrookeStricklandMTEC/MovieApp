@@ -12,33 +12,45 @@
     margin: 50px 0px 50px 0px;
 }
 
-mat-card {
+.movie-section{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
 
-
-    width: 100px;
-    height: 100px;
+mat-card{
+    display: inline-flex;
+    flex-wrap: wrap;
+    margin: 15px;
     background-color: aqua;
+    width: 150px;
+    height: 200px;
+}
+
+img{
+    width: 30px;
+    height: 30px;
 }
 
 // infinite scroll
 
-div.scrollmenu {
+.scrollmenu {
     background-color: #333;
-    overflow: auto;
+    overflow-x: scroll;
     white-space: nowrap;
   }
   
-  div.scrollmenu mat-card {
+div.scrollmenu mat-card {
     display: inline-block;
     color: white;
     text-align: center;
     padding: 14px;
     text-decoration: none;
-  }
+}
   
-  div.scrollmenu mat-card:hover {
+div.scrollmenu mat-card:hover {
     background-color: #777;
-  }
+}
 
 
 //
