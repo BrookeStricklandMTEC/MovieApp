@@ -1,6 +1,22 @@
 <div class="home-wrapper">
     <input placeholder="Search Movie" class="input-movie" />
 
+    <div *ngFor="let section of browseMovies">
+
+        <mat-card>
+            <mat-card-header>
+                <mat-card-title>{{section.title}}</mat-card-title>
+            </mat-card-header>
+
+            <mat-card-content>
+                <app-movies [movies$]="section.movies"></app-movies>
+            </mat-card-content>
+        </mat-card>
+
+    </div>
+
+
+
     <section>
         <h3 class="browse-head"> Upcoming </h3>
 

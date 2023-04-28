@@ -7,7 +7,6 @@ import { Injectable } from '@angular/core';
   import { Movie } from '../interfaces/movie';
 import { environment } from 'src/environments/environment.development';
 // 
-import { environment } from '../../environments/environment';
 
 
 
@@ -38,10 +37,9 @@ export class MovieService {
 
 
 	search(input: string) {
-		const url = this.urlbase + "/titles/search/title/%7B" + encodeURIComponent(input) + "%7B"
+		const url = this.urlbase + "/titles/search/title/%7B" + encodeURIComponent(input) + "%7B";
 
-
-		return this.http.get(url,{
+		return this.http.get<Movie[]>(url,{
 			headers: this.headers,
 			params: {exact: "false"}
 		})
