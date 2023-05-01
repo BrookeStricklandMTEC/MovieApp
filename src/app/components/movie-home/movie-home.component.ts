@@ -35,12 +35,11 @@ export class MovieHomeComponent {
   }
 
 
-// hover effect
+  // movie added to favorites
 
-
-
-
-
+  favorited(): void{
+    
+  }
 
 
 // Scroll
