@@ -50,12 +50,14 @@ img {
 
     scroll-snap-align: center;
     scroll-snap-type: mandatory;
+    scrollbar-width: none;
+
 
     display: flex;
     flex-wrap: nowrap;
     row-gap: 1em;
 
-    mat-card {   
+    mat-card {
         flex-grow: 0;
         flex-shrink: 0;
         flex-basis: 11rem;
