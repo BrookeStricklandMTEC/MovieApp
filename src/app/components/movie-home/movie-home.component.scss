@@ -12,7 +12,7 @@
     margin: 50px 0px 50px 0px;
 }
 
-.movie-section{
+.movie-section {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -21,21 +21,25 @@
     width: 80rem;
 }
 
-mat-card{
-    display: inline-flex;
+mat-card {
+    display: flex;
     flex-wrap: wrap;
     margin: 15px;
     background-color: aqua;
-    width: 150px;
-    height: 200px;
+    width: 200px;
+    height: 260px;
 }
 
-img{
+p{
+white-space: normal;
+}
+
+img {
     width: 30px;
     height: 30px;
 }
 
-.scrollIcon:hover{
+.scrollIcon:hover {
     cursor: pointer;
 }
 
@@ -45,11 +49,12 @@ img{
     background-color: #333;
     overflow-x: scroll;
     white-space: nowrap;
-    scroll-snap-align: center; 
+    
+    scroll-snap-align: center;
     scroll-snap-type: mandatory;
 }
 
-::-webkit-scrollbar{
+::-webkit-scrollbar {
     display: none;
 }
 
@@ -67,11 +72,11 @@ div.scrollmenu mat-card:hover {
 
 
 .material-symbols-outlined {
-  font-variation-settings:
-  'FILL' 0,
-  'wght' 400,
-  'GRAD' 0,
-  'opsz' 48
+    font-variation-settings:
+        'FILL' 0,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 48
 }
 
 
