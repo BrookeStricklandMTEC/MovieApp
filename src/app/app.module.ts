@@ -17,6 +17,11 @@ import { HttpClientModule } from "@angular/common/http"
 // Gabriel's imports
 import { MatIconModule } from '@angular/material/icon';
 import { MovieCardComponent } from './components/movie-card/movie-card.component'
+import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MovieDetailsComponent } from './components/movie-details/movie-details.component';
+
 
 @NgModule({
   declarations: [
@@ -26,6 +31,7 @@ import { MovieCardComponent } from './components/movie-card/movie-card.component
     MovieHomeComponent,
     MoviesComponent,
     MovieCardComponent,
+    MovieDetailsComponent,
   ],
   imports: [
     BrowserModule,
@@ -38,6 +44,9 @@ import { MovieCardComponent } from './components/movie-card/movie-card.component
 
     //Gabriel's Imports
     MatIconModule,
+    MatInputModule,
+    MatFormFieldModule,
+    BrowserAnimationsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

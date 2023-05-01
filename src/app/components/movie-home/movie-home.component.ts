@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Movie, Result } from 'src/app/interfaces/movie';
 import { MovieService } from 'src/app/service/movie.service';
+import { Router, ParamMap } from '@angular/router'; 
 
 type section = {
   title: string,
@@ -20,7 +21,8 @@ export class MovieHomeComponent {
   nathansTestObservable$: Observable<any> | undefined;
 
   constructor(
-    private movieService: MovieService
+    private movieService: MovieService,
+    private router: Router,
   ) {
 
   }
@@ -50,6 +52,18 @@ export class MovieHomeComponent {
     }
   }
 
+  // go to movie details
+
+    goToMovieDetails(movie: Movie){
+      this.router.navigate(['./movieDetails', { movieId: movie.id}])
+      // error for id ^ 
+    }
+
+  // movie added to favorites
+
+  favorited(): void{
+    
+  }
 
 }
 

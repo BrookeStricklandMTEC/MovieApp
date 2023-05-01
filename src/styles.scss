@@ -1,5 +1,14 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap");
-
+:root {
+  --background-color: #373737;
+  --white-color: #F6F7EB;
+  --gray-color: #c5c6d0;
+  --dark-gray-color: #232023;
+  --blue-color: #3F88C5;
+  --green-color: #44BBA4;
+  --orange-color: #FA7921;
+  --purple-color: #C490D1;
+}
 * {
   box-sizing: border-box;
   margin: 0;
@@ -8,11 +17,12 @@
 
 body {
   font-family: "Poppins", sans-serif;
-  // background-image: url("./assets/background.jpg");
-  background-color: maroon;
+  background-color: #373737;
   height: 100vh;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   color: #fff;
 }
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

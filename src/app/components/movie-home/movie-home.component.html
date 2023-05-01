@@ -1,5 +1,4 @@
 <div class="home-wrapper">
-    <input placeholder="Search Movie" class="input-movie" />
 
     <div class="nathansTestObservable">
         <h2>Nathan's Test Observable</h2>
@@ -37,16 +36,59 @@
 
             <div class="scrollmenu" id="scroll-upcoming">
 
+                <mat-card
+                [routerLink]="['/movieDetails']">
 
-                <mat-card> Beau is Afraid  </mat-card>
-                <mat-card> Declaration of Indepence </mat-card>
-                <mat-card> Movie  </mat-card>
-                <mat-card> Movie  </mat-card>
-                <mat-card> Movie  </mat-card>
-                <mat-card> Movie </mat-card>
-                <mat-card> Movie  </mat-card>
-                <mat-card> Movie </mat-card>
-                <mat-card> Movie </mat-card>
+                <!-- -----------------------------NATE YOU SILLY GOOSE FIX THIS LINE-------------------------- -->
+                
+            </mat-card>
+
+            <mat-card> Movie
+                    <div class="material-symbols-outlined" id="favoriteIcon">
+                        favorite
+                    </div>    
+                </mat-card>
+                
+                <mat-card> Movie
+                    <div class="material-symbols-outlined" id="favoriteIcon">
+                        favorite
+                    </div>  
+                </mat-card>
+                <mat-card> Movie 
+                    <div class="material-symbols-outlined" id="favoriteIcon">
+                        favorite
+                    </div>  
+                </mat-card>
+                <mat-card> Movie 
+                    <div class="material-symbols-outlined" id="favoriteIcon">
+                        favorite
+                    </div>  
+                </mat-card>
+                <mat-card> Movie 
+                    <div class="material-symbols-outlined" id="favoriteIcon">
+                        favorite
+                    </div>  
+                </mat-card>
+                <mat-card> Movie 
+                    <div class="material-symbols-outlined" id="favoriteIcon">
+                        favorite
+                    </div>  
+                </mat-card>
+                <mat-card> Movie 
+                    <div class="material-symbols-outlined" id="favoriteIcon">
+                        favorite
+                    </div>  
+                </mat-card>
+                <mat-card> Movie 
+                    <div class="material-symbols-outlined" id="favoriteIcon">
+                        favorite
+                    </div>  
+                </mat-card>
+                <mat-card> Movie 
+                    <div class="material-symbols-outlined" id="favoriteIcon">
+                        favorite
+                    </div>  
+                </mat-card>
 
 
             </div>
@@ -64,34 +106,72 @@
         <h3 class="browse-head"> Genres </h3>
         <div class="movie-section">
 
-            <div class="scrollIcon" (click)="leftGenres()">
-                <img src="../../../assets/arrow-badge-left.png"
-                    onmouseover="this.src='../../../assets/arrow-badge-left-filled.png';"
-                    onmouseout="this.src='../../../assets/arrow-badge-left.png';" />
+                <div class="scrollIcon" (click)="leftGenres()">
+                    <img src="../../../assets/arrow-badge-left.png"
+                        onmouseover="this.src='../../../assets/arrow-badge-left-filled.png';"
+                        onmouseout="this.src='../../../assets/arrow-badge-left.png';" />
+                </div>
+
+                <div class="scrollmenu" id="scroll-genres">
+
+
+                <mat-card> Movie
+                    <div class="material-symbols-outlined" id="favoriteIcon">
+                        favorite
+                    </div>    
+                </mat-card>
+                
+                <mat-card> Movie
+                    <div class="material-symbols-outlined" id="favoriteIcon">
+                        favorite
+                    </div>  
+                </mat-card>
+                <mat-card> Movie 
+                    <div class="material-symbols-outlined" id="favoriteIcon">
+                        favorite
+                    </div>  
+                </mat-card>
+                <mat-card> Movie 
+                    <div class="material-symbols-outlined" id="favoriteIcon">
+                        favorite
+                    </div>  
+                </mat-card>
+                <mat-card> Movie 
+                    <div class="material-symbols-outlined" id="favoriteIcon">
+                        favorite
+                    </div>  
+                </mat-card>
+                <mat-card> Movie 
+                    <div class="material-symbols-outlined" id="favoriteIcon">
+                        favorite
+                    </div>  
+                </mat-card>
+                <mat-card> Movie 
+                    <div class="material-symbols-outlined" id="favoriteIcon">
+                        favorite
+                    </div>  
+                </mat-card>
+                <mat-card> Movie 
+                    <div class="material-symbols-outlined" id="favoriteIcon">
+                        favorite
+                    </div>  
+                </mat-card>
+                <mat-card> Movie 
+                    <div class="material-symbols-outlined" id="favoriteIcon">
+                        favorite
+                    </div>  
+                </mat-card>
+
+
+
+                </div>
+
+                <div class="scrollIcon" (click)="rightGenres()">
+                    <img src="../../../assets/arrow-badge-right.png"
+                        onmouseover="this.src='../../../assets/arrow-badge-right-filled.png';"
+                        onmouseout="this.src='../../../assets/arrow-badge-right.png';" />
+                </div>
             </div>
-
-            <div class="scrollmenu" id="scroll-genres">
-
-
-                <mat-card> Movie <ul> description </ul> </mat-card>
-                <mat-card> Movie <ul> description </ul> </mat-card>
-                <mat-card> Movie <ul> description </ul> </mat-card>
-                <mat-card> Movie <ul> description </ul> </mat-card>
-                <mat-card> Movie <ul> description </ul> </mat-card>
-                <mat-card> Movie <ul> description </ul> </mat-card>
-                <mat-card> Movie <ul> description </ul> </mat-card>
-                <mat-card> Movie <ul> description </ul> </mat-card>
-                <mat-card> Movie <ul> description </ul> </mat-card>
-
-
-            </div>
-
-            <div class="scrollIcon" (click)="rightGenres()">
-                <img src="../../../assets/arrow-badge-right.png"
-                    onmouseover="this.src='../../../assets/arrow-badge-right-filled.png';"
-                    onmouseout="this.src='../../../assets/arrow-badge-right.png';" />
-            </div>
-        </div>
 
     </section>
 
@@ -108,15 +188,52 @@
             <div class="scrollmenu" id="scroll-popular">
 
 
-                <mat-card> Movie <ul> description </ul> </mat-card>
-                <mat-card> Movie <ul> description </ul> </mat-card>
-                <mat-card> Movie <ul> description </ul> </mat-card>
-                <mat-card> Movie <ul> description </ul> </mat-card>
-                <mat-card> Movie <ul> description </ul> </mat-card>
-                <mat-card> Movie <ul> description </ul> </mat-card>
-                <mat-card> Movie <ul> description </ul> </mat-card>
-                <mat-card> Movie <ul> description </ul> </mat-card>
-                <mat-card> Movie <ul> description </ul> </mat-card>
+                <mat-card> Movie
+                    <div class="material-symbols-outlined" id="favoriteIcon">
+                        favorite
+                    </div>    
+                </mat-card>
+                
+                <mat-card> Movie
+                    <div class="material-symbols-outlined" id="favoriteIcon">
+                        favorite
+                    </div>  
+                </mat-card>
+                <mat-card> Movie 
+                    <div class="material-symbols-outlined" id="favoriteIcon">
+                        favorite
+                    </div>  
+                </mat-card>
+                <mat-card> Movie 
+                    <div class="material-symbols-outlined" id="favoriteIcon">
+                        favorite
+                    </div>  
+                </mat-card>
+                <mat-card> Movie 
+                    <div class="material-symbols-outlined" id="favoriteIcon">
+                        favorite
+                    </div>  
+                </mat-card>
+                <mat-card> Movie 
+                    <div class="material-symbols-outlined" id="favoriteIcon">
+                        favorite
+                    </div>  
+                </mat-card>
+                <mat-card> Movie 
+                    <div class="material-symbols-outlined" id="favoriteIcon">
+                        favorite
+                    </div>  
+                </mat-card>
+                <mat-card> Movie 
+                    <div class="material-symbols-outlined" id="favoriteIcon">
+                        favorite
+                    </div>  
+                </mat-card>
+                <mat-card> Movie 
+                    <div class="material-symbols-outlined" id="favoriteIcon">
+                        favorite
+                    </div>  
+                </mat-card>
 
 
             </div>
