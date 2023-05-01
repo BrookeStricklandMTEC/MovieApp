@@ -1,9 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap");
 :root {
-  --background-color: #800000;
+  --background-color: #373737;
   --white-color: #F6F7EB;
-  --gray-color: #dadfea;
-  --dark-gray-color: #9fa2a9;
+  --gray-color: #c5c6d0;
+  --dark-gray-color: #232023;
   --blue-color: #3F88C5;
   --green-color: #44BBA4;
   --orange-color: #FA7921;
@@ -17,8 +17,7 @@
 
 body {
   font-family: "Poppins", sans-serif;
-  // background-image: url("./assets/background.jpg");
-  background-color: maroon;
+  background-color: #373737;
   height: 100vh;
   background-position: center;
   background-repeat: no-repeat;
