@@ -37,6 +37,7 @@ export class MovieService {
 
 
 	search(input: string) {
+		//                                                      v-url paramater pollution avoidance
 		const url = this.urlbase + "/titles/search/title/%7B" + encodeURIComponent(input) + "%7B";
 
 		return this.http.get<Movie[]>(url,{
