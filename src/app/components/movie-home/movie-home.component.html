@@ -22,13 +22,13 @@
 
         <div class="movie-section">
 
-            <div class="scrollIcon" id="scrollLeft" (click)="onWheelLeft()">
+            <div class="scrollIcon" (click)="leftUpcoming()">
                 <img src="../../../assets/arrow-badge-left.png"
                     onmouseover="this.src='../../../assets/arrow-badge-left-filled.png';"
                     onmouseout="this.src='../../../assets/arrow-badge-left.png';" />
             </div>
 
-            <div class="scrollmenu" id="scroll-container">
+            <div class="scrollmenu" id="scroll-upcoming">
 
 
                 <mat-card> Movie </mat-card>
@@ -44,7 +44,7 @@
 
             </div>
 
-            <div class="scrollIcon" id="scrollRight" (click)="onWheelRight()">
+            <div class="scrollIcon"(click)="rightUpcoming()">
                 <img src="../../../assets/arrow-badge-right.png"
                     onmouseover="this.src='../../../assets/arrow-badge-right-filled.png';"
                     onmouseout="this.src='../../../assets/arrow-badge-right.png';" />
@@ -57,13 +57,13 @@
         <h3 class="browse-head"> Genres </h3>
             <div class="movie-section">
 
-                <div class="scrollIcon" id="scrollLeft" (click)="onWheelLeft()">
+                <div class="scrollIcon" (click)="leftGenres()">
                     <img src="../../../assets/arrow-badge-left.png"
                         onmouseover="this.src='../../../assets/arrow-badge-left-filled.png';"
                         onmouseout="this.src='../../../assets/arrow-badge-left.png';" />
                 </div>
     
-                <div class="scrollmenu" id="scroll-container">
+                <div class="scrollmenu" id="scroll-genres">
     
     
                     <mat-card> Movie </mat-card>
@@ -79,7 +79,7 @@
     
                 </div>
     
-                <div class="scrollIcon" id="scrollRight" (click)="onWheelRight()">
+                <div class="scrollIcon" (click)="rightGenres()">
                     <img src="../../../assets/arrow-badge-right.png"
                         onmouseover="this.src='../../../assets/arrow-badge-right-filled.png';"
                         onmouseout="this.src='../../../assets/arrow-badge-right.png';" />
@@ -92,13 +92,13 @@
         <h3 class="browse-head"> Popular </h3>
            <div class="movie-section">
 
-            <div class="scrollIcon" id="scrollLeft" (click)="onWheelLeft()">
+            <div class="scrollIcon" (click)="leftPopular()">
                 <img src="../../../assets/arrow-badge-left.png"
                     onmouseover="this.src='../../../assets/arrow-badge-left-filled.png';"
                     onmouseout="this.src='../../../assets/arrow-badge-left.png';" />
             </div>
 
-            <div class="scrollmenu" id="scroll-container">
+            <div class="scrollmenu" id="scroll-popular">
 
 
                 <mat-card> Movie </mat-card>
@@ -114,7 +114,7 @@
 
             </div>
 
-            <div class="scrollIcon" id="scrollRight" (click)="onWheelRight()">
+            <div class="scrollIcon" (click)="rightPopular()">
                 <img src="../../../assets/arrow-badge-right.png"
                     onmouseover="this.src='../../../assets/arrow-badge-right-filled.png';"
                     onmouseout="this.src='../../../assets/arrow-badge-right.png';" />

@@ -39,12 +39,14 @@ img{
     cursor: pointer;
 }
 
-// infinite scroll
+// scroll //
 
 .scrollmenu {
     background-color: #333;
     overflow-x: scroll;
     white-space: nowrap;
+    scroll-snap-align: center; 
+    scroll-snap-type: mandatory;
 }
 
 ::-webkit-scrollbar{

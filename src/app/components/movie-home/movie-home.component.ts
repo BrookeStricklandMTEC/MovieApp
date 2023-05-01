@@ -31,15 +31,45 @@ export class MovieHomeComponent {
     })
   }
 
-  onWheelLeft(): void {
-    document.getElementById('scroll-container').parentElement.scrollLeft -= 200;
-    console.log('move left')
+
+
+
+
+
+
+  // will fix this with parent element 
+
+  // upcoming
+  rightUpcoming(): void {
+    document.getElementById('scroll-upcoming').scrollLeft += 215;
   }
 
-  onWheelRight(): void {
-    document.getElementById('scroll-container').parentElement.scrollLeft += 200;
-    console.log('move right')
+  leftUpcoming(): void {
+    document.getElementById('scroll-upcoming').scrollLeft -= 215;
   }
+  //
+
+  // genres
+  rightGenres(): void {
+    document.getElementById('scroll-genres').scrollLeft += 215;
+  }
+
+  leftGenres(): void {
+    document.getElementById('scroll-genres').scrollLeft -= 215;
+  }
+
+  //
+
+  //
+  rightPopular(): void {
+    document.getElementById('scroll-popular').scrollLeft += 215;
+  }
+
+  leftPopular(): void {
+    document.getElementById('scroll-popular').scrollLeft -= 215;
+  }
+  //
+
 }
 
 
