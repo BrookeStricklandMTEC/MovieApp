@@ -19,6 +19,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MovieDetailsComponent } from './components/movie-details/movie-details.component';
 
 
 @NgModule({
@@ -28,6 +29,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     FavoriteMovieComponent,
     MovieHomeComponent,
     MoviesComponent,
+    MovieDetailsComponent,
   ],
   imports: [
     BrowserModule,
