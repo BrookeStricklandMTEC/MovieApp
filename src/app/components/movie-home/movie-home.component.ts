@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Movie } from 'src/app/interfaces/movie';
 import { MovieService } from 'src/app/service/movie.service';
-import { Router } from '@angular/router'; 
+import { Router, ParamMap } from '@angular/router'; 
 
 type section = {
   title: string,
@@ -39,7 +39,7 @@ export class MovieHomeComponent {
   // go to movie details
 
     goToMovieDetails(movie: Movie){
-      // this.router.navigate(['./movieDetails'], { movieId: movie.id})
+      this.router.navigate(['./movieDetails', { movieId: movie.id}])
       // error for id ^ 
     }
 
