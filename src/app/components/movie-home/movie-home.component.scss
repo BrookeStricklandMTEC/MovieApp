@@ -18,7 +18,7 @@
     margin: 50px 0px 50px 0px;
 }
 
-.movie-section{
+.movie-section {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -27,21 +27,25 @@
     width: 80rem;
 }
 
-mat-card{
-    display: inline-flex;
+mat-card {
+    display: flex;
     flex-wrap: wrap;
     margin: 15px;
     background-color: aqua;
-    width: 150px;
-    height: 200px;
+    width: 200px;
+    height: 260px;
 }
 
-img{
+p{
+white-space: normal;
+}
+
+img {
     width: 30px;
     height: 30px;
 }
 
-.scrollIcon:hover{
+.scrollIcon:hover {
     cursor: pointer;
 }
 
@@ -50,34 +54,49 @@ img{
 .scrollmenu {
     background-color: #333;
     overflow-x: scroll;
-    white-space: nowrap;
-    scroll-snap-align: center; 
+    // white-space: nowrap;
+    
+    scroll-snap-align: center;
     scroll-snap-type: mandatory;
+
+    display: flex;
+    flex-wrap: nowrap;
+    row-gap: 1em;
+
+    mat-card {
+        flex-grow: 0;
+        flex-shrink: 0;
+        flex-basis: 11rem;
+        transition: flex-basis ease-in-out 1s;
+
+        // display: block;
+        color: white;
+        text-align: center;
+        padding: 14px;
+        text-decoration: none;
+
+
+    }
+    mat-card:hover {
+        background-color: #777;
+
+        flex-basis: 15rem;
+    }
 }
 
-::-webkit-scrollbar{
+::-webkit-scrollbar {
     display: none;
 }
 
-div.scrollmenu mat-card {
-    display: inline-block;
-    color: white;
-    text-align: center;
-    padding: 14px;
-    text-decoration: none;
-}
 
-div.scrollmenu mat-card:hover {
-    background-color: #777;
-}
 
 
 .material-symbols-outlined {
-  font-variation-settings:
-  'FILL' 0,
-  'wght' 400,
-  'GRAD' 0,
-  'opsz' 48
+    font-variation-settings:
+        'FILL' 0,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 48
 }
 
 

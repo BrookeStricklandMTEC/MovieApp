@@ -40,7 +40,7 @@ export class MovieHomeComponent {
 
 
 
-  // will fix this with parent element 
+  // will fix this with parent element, this is temporary until i can figure out typescript :(
 
   // upcoming
   rightUpcoming(): void {
