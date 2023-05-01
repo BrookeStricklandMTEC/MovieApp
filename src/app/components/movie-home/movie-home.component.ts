@@ -32,13 +32,13 @@ export class MovieHomeComponent {
   }
 
   onWheelLeft(): void {
-    document.getElementById('scroll-container').scrollLeft -= 200;
-    console.log('scrolled left');
+    document.getElementById('scroll-container').parentElement.scrollLeft -= 200;
+    console.log('move left')
   }
 
   onWheelRight(): void {
-    document.getElementById('scroll-container').scrollLeft += 200;
-    console.log('scrolled right');
+    document.getElementById('scroll-container').parentElement.scrollLeft += 200;
+    console.log('move right')
   }
 }
 
