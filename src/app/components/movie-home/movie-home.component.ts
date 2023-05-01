@@ -14,32 +14,33 @@ type section = {
   templateUrl: './movie-home.component.html',
   styleUrls: ['./movie-home.component.scss']
 })
-export class MovieHomeComponent{
+export class MovieHomeComponent {
 
   browseMovies: section[] = [];
 
   constructor(
     private movieService: MovieService
-  ){
+  ) {
 
   }
 
-  ngOnInit(){
+  ngOnInit() {
     this.browseMovies.push({
       title: "scooby doo like movies:",
       movies: this.movieService.search("scooby doo")
     })
   }
 
-
-  leftScroll(){
-
+  onWheelLeft(): void {
+    document.getElementById('scroll-container').scrollLeft -= 200;
+    console.log('scrolled left');
   }
 
-  rightScroll(){
-    
+  onWheelRight(): void {
+    document.getElementById('scroll-container').scrollLeft += 200;
+    console.log('scrolled right');
   }
-
-
-
 }
+
+
+
