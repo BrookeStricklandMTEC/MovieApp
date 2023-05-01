@@ -4,7 +4,7 @@ import { Injectable } from '@angular/core';
 // Brookes Imports 
 // import {enviornment}
 import { Observable, concat, defer, map, of, tap } from 'rxjs';
-import { Movie, genre } from '../interfaces/movie';
+import { Movie, Result, genre } from '../interfaces/movie';
 import { environment } from 'src/environments/environment.development';
 // 
 
@@ -31,9 +31,9 @@ export class MovieService {
 		private http: HttpClient
 	) { }
 
-	browseMovies(searchText: string): Observable<Movie[]> {
+	browseMovies(searchText: string): Observable<Result> {
 		const alteredText = searchText.replace(/\s/g, '+');
-		return this.http.get<Movie[]>(`https://moviesdatabase.p.rapidapi.com/titles/x/titles-by-ids`).pipe(
+		return this.http.get<Result>(`https://moviesdatabase.p.rapidapi.com/titles/x/titles-by-ids`).pipe(
 			map((response: any) => response['games']
 			)
 		)
@@ -44,7 +44,7 @@ export class MovieService {
 		//                                                      v-url paramater pollution avoidance
 		const url = this.urlbase + "/titles/search/title/%7B" + encodeURIComponent(input) + "%7B";
 
-		return this.http.get<Movie[]>(url, {
+		return this.http.get<Result>(url, {
 			headers: this.headers,
 			params: { exact: "false" }
 		})
@@ -75,21 +75,21 @@ export class MovieService {
 		return returnObservable;
 	}
 
-	boxOfficeWeekend(): Observable<Movie[]>{
+	boxOfficeWeekend(): Observable<Result>{
 		const url = this.urlbase + "/titles";
 
-		return this.http.get<Movie[]>(url, {
+		return this.http.get<Result>(url, {
 			headers: this.headers,
 			params: { list: "top_boxoffice_last_weekend_10", limit:20}
 		})
 	}
 
-	top250(): Observable<Movie[]>{
+	top250(): Observable<Result>{
 		const url = this.urlbase + "/titles";
 
-		return this.http.get<Movie[]>(url, {
+		return this.http.get<Result>(url, {
 			headers: this.headers,
-			params: { list: "top_rated_250", sort: "year.incr"}
+			params: { list: "top_rated_250", sort: "year.decr"}
 		})
 	}
 

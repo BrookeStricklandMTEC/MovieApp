@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { Observable, tap } from 'rxjs';
-import { Movie } from 'src/app/interfaces/movie';
+import { Movie, Result } from 'src/app/interfaces/movie';
 
 @Component({
   selector: 'app-movies',
@@ -8,7 +8,7 @@ import { Movie } from 'src/app/interfaces/movie';
   styleUrls: ['./movies.component.scss']
 })
 export class MoviesComponent {
-  @Input() movies$ : Observable<Movie[]> | undefined;
+  @Input() movies$ : Observable<Result> | undefined;
   movies: Movie[] | undefined;
 
   constructor(){
@@ -17,9 +17,20 @@ export class MoviesComponent {
 
   ngOnInit(){
     this.movies$?.pipe(
-      tap(thing => this.movies = thing),
+      tap(thing => this.movies = thing.results),
       tap(console.log)
     ).subscribe()
   }
+
+  rightUpcoming(e:unknown): void {
+    //@ts-ignore
+    e.target.parentElement.previousSibling.scrollLeft += 215;
+  }
+
+  leftUpcoming(e:unknown): void {
+    //@ts-ignore
+    e.target.parentElement.nextSibling.scrollLeft -= 215;
+  }
+
 
 }

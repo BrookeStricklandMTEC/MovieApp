@@ -12,6 +12,7 @@ export interface Movie {
     titleText:    TitleText;
     releaseYear:  ReleaseYear;
     releaseDate:  ReleaseDate;
+    favoritedByMe? : Boolean;
 }
 
 export interface Image {

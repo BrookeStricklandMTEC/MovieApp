@@ -15,7 +15,8 @@ import { MatCardModule } from '@angular/material/card';
 import { HttpClientModule } from "@angular/common/http"
 
 // Gabriel's imports
-import { MatIconModule } from '@angular/material/icon'
+import { MatIconModule } from '@angular/material/icon';
+import { MovieCardComponent } from './components/movie-card/movie-card.component'
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { MatIconModule } from '@angular/material/icon'
     FavoriteMovieComponent,
     MovieHomeComponent,
     MoviesComponent,
+    MovieCardComponent,
   ],
   imports: [
     BrowserModule,
