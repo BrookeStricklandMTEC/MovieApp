@@ -2,9 +2,9 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 // Brookes Imports 
-  // import {enviornment}
-  import { Observable, map } from 'rxjs';
-  import { Movie } from '../interfaces/movie';
+// import {enviornment}
+import { Observable, concat, defer, map, of, tap } from 'rxjs';
+import { Movie, genre } from '../interfaces/movie';
 import { environment } from 'src/environments/environment.development';
 // 
 
@@ -14,7 +14,7 @@ import { environment } from 'src/environments/environment.development';
 	providedIn: 'root'
 })
 export class MovieService {
-
+//PRIVATE
 	private apikey: string = environment?.apikeys?.moviesdatabase ?? "";
 	private urlbase: string = "https://moviesdatabase.p.rapidapi.com";
 	private headers: { [header: string]: string | string[]; } = {
@@ -23,27 +23,56 @@ export class MovieService {
 		"content-type": "application/octet-stream"
 	}
 
+//PUBLIC
+	genresCache: genre[] = [ null, "Action", "Adult", "Adventure", "Animation", "Biography", "Comedy", "Crime", "Documentary", "Drama", "Family", "Fantasy", "Film-Noir", "Game-Show", "History", "Horror", "Music", "Musical", "Mystery", "News", "Reality-TV", "Romance", "Sci-Fi", "Short", "Sport", "Talk-Show", "Thriller", "War", "Western" ]
+
+
 	constructor(
 		private http: HttpClient
 	) { }
 
-  browseMovies(searchText: string): Observable<Movie[]>{
-    const alteredText = searchText.replace(/\s/g, '+');
-    return this.http.get<Movie[]>(`https://moviesdatabase.p.rapidapi.com/titles/x/titles-by-ids`).pipe(
-        map((response : any) => response['games']
-      )
-    )
-  }
+	browseMovies(searchText: string): Observable<Movie[]> {
+		const alteredText = searchText.replace(/\s/g, '+');
+		return this.http.get<Movie[]>(`https://moviesdatabase.p.rapidapi.com/titles/x/titles-by-ids`).pipe(
+			map((response: any) => response['games']
+			)
+		)
+	}
 
 
 	search(input: string) {
 		//                                                      v-url paramater pollution avoidance
 		const url = this.urlbase + "/titles/search/title/%7B" + encodeURIComponent(input) + "%7B";
 
-		return this.http.get<Movie[]>(url,{
+		return this.http.get<Movie[]>(url, {
 			headers: this.headers,
-			params: {exact: "false"}
+			params: { exact: "false" }
 		})
+	}
+
+	getGenres(): Observable<genre[]> {
+		const url = this.urlbase + "/titles/utils/genres";
+
+		let returnObservable =
+		concat( //concat + async pipe => "The async pipe subscribes to an Observable or Promise and returns the latest value it has emitted. When a new value is emitted, the async pipe marks the component to be checked for changes."
+
+			//first, get the current cache
+			defer(() => of(this.genresCache)),
+
+			//then, get the actual values
+			this.http.get<{results: genre[]}>(url, {
+				headers: this.headers,
+			}).pipe( //but...
+				map<{results: genre[]}, genre[]>(input => { //unwrap the response
+					return input.results;
+				}),
+				tap(newGenres => { //and update the cache
+					this.genresCache = newGenres
+				})
+			)
+		)
+
+		return returnObservable;
 	}
 
 	/*
