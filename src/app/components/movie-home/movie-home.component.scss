@@ -18,7 +18,7 @@
     align-items: center;
     justify-content: center;
     margin: auto;
-    width: 80%;
+    width: 80rem;
 }
 
 mat-card{
@@ -50,7 +50,7 @@ img{
 ::-webkit-scrollbar{
     display: none;
 }
-  
+
 div.scrollmenu mat-card {
     display: inline-block;
     color: white;
@@ -58,7 +58,7 @@ div.scrollmenu mat-card {
     padding: 14px;
     text-decoration: none;
 }
-  
+
 div.scrollmenu mat-card:hover {
     background-color: #777;
 }
