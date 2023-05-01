@@ -35,12 +35,15 @@ export class MovieHomeComponent {
   }
 
 
+// hover effect
 
 
 
 
 
-  // will fix this with parent element, this is temporary until i can figure out typescript :(
+
+
+// Scroll
 
   // upcoming
   rightUpcoming(): void {
