@@ -15,7 +15,11 @@ import { MatCardModule } from '@angular/material/card';
 import { HttpClientModule } from "@angular/common/http"
 
 // Gabriel's imports
-import { MatIconModule } from '@angular/material/icon'
+import { MatIconModule } from '@angular/material/icon';
+import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 
 @NgModule({
   declarations: [
@@ -36,6 +40,9 @@ import { MatIconModule } from '@angular/material/icon'
 
     //Gabriel's Imports
     MatIconModule,
+    MatInputModule,
+    MatFormFieldModule,
+    BrowserAnimationsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

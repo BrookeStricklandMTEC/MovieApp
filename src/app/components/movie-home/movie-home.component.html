@@ -1,5 +1,4 @@
 <div class="home-wrapper">
-    <input placeholder="Search Movie" class="input-movie" />
 
     <div class="nathansTestObservable">
         <h2>Nathan's Test Observable</h2>
@@ -35,7 +34,6 @@
             </div>
 
             <div class="scrollmenu" id="scroll-upcoming">
-
 
                 <mat-card> Movie
                     <div class="material-symbols-outlined" id="favoriteIcon">
@@ -100,13 +98,13 @@
         <h3 class="browse-head"> Genres </h3>
         <div class="movie-section">
 
-            <div class="scrollIcon" (click)="leftGenres()">
-                <img src="../../../assets/arrow-badge-left.png"
-                    onmouseover="this.src='../../../assets/arrow-badge-left-filled.png';"
-                    onmouseout="this.src='../../../assets/arrow-badge-left.png';" />
-            </div>
+                <div class="scrollIcon" (click)="leftGenres()">
+                    <img src="../../../assets/arrow-badge-left.png"
+                        onmouseover="this.src='../../../assets/arrow-badge-left-filled.png';"
+                        onmouseout="this.src='../../../assets/arrow-badge-left.png';" />
+                </div>
 
-            <div class="scrollmenu" id="scroll-genres">
+                <div class="scrollmenu" id="scroll-genres">
 
 
                 <mat-card> Movie
@@ -158,14 +156,14 @@
 
 
 
-            </div>
+                </div>
 
-            <div class="scrollIcon" (click)="rightGenres()">
-                <img src="../../../assets/arrow-badge-right.png"
-                    onmouseover="this.src='../../../assets/arrow-badge-right-filled.png';"
-                    onmouseout="this.src='../../../assets/arrow-badge-right.png';" />
+                <div class="scrollIcon" (click)="rightGenres()">
+                    <img src="../../../assets/arrow-badge-right.png"
+                        onmouseover="this.src='../../../assets/arrow-badge-right-filled.png';"
+                        onmouseout="this.src='../../../assets/arrow-badge-right.png';" />
+                </div>
             </div>
-        </div>
 
     </section>
 
