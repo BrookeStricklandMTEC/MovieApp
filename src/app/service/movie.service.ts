@@ -75,6 +75,24 @@ export class MovieService {
 		return returnObservable;
 	}
 
+	boxOfficeWeekend(): Observable<Movie[]>{
+		const url = this.urlbase + "/titles";
+
+		return this.http.get<Movie[]>(url, {
+			headers: this.headers,
+			params: { list: "top_boxoffice_last_weekend_10", limit:20}
+		})
+	}
+
+	top250(): Observable<Movie[]>{
+		const url = this.urlbase + "/titles";
+
+		return this.http.get<Movie[]>(url, {
+			headers: this.headers,
+			params: { list: "top_rated_250", sort: "year.incr"}
+		})
+	}
+
 	/*
 	get(
 		url: string,
