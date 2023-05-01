@@ -1,4 +1,3 @@
-
 .home-wrapper {
     text-align: center;
 }
@@ -26,13 +25,13 @@ mat-card {
     display: flex;
     flex-wrap: wrap;
     margin: 15px;
-    background-color: aqua;
+    background-color: magenta;
     width: 200px;
     height: 260px;
 }
 
-p{
-white-space: normal;
+p {
+    white-space: normal;
 }
 
 img {
@@ -48,30 +47,38 @@ img {
 
 .scrollmenu {
     overflow-x: scroll;
-    white-space: nowrap;
 
     scroll-snap-align: center;
     scroll-snap-type: mandatory;
-}
 
+    display: flex;
+    flex-wrap: nowrap;
+    row-gap: 1em;
+
+    mat-card {   
+        flex-grow: 0;
+        flex-shrink: 0;
+        flex-basis: 11rem;
+        transition: flex-basis ease-in-out;
+        color: white;
+        text-align: center;
+        padding: 14px;
+        text-decoration: none;
+        transition: .5s;
+
+        text-shadow: .5px 1.5px #000;
+    }
+
+    mat-card:hover {
+        background-color: #777;
+        flex-basis: 15rem;
+        display: block;
+        cursor: pointer;
+        transition: .5s;
+
+    }
+
+}
 ::-webkit-scrollbar {
     display: none;
 }
-
-div.scrollmenu mat-card {
-    display: inline-block;
-    color: white;
-    text-align: center;
-    padding: 14px;
-    text-decoration: none;
-
-    transition: .5s;
-}
-
-mat-card:hover {
-    background-color: #777;
-}
-
-}
-
-//
