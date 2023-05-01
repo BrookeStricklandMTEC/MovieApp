@@ -11,9 +11,11 @@ import { MoviesComponent } from './components/movies/movies.component';
 import { MatCardModule } from '@angular/material/card';
 
 
-//Nathan's imports
+// Nathan's imports
 import { HttpClientModule } from "@angular/common/http"
 
+// Gabriel's imports
+import { MatIconModule } from '@angular/material/icon'
 
 @NgModule({
   declarations: [
@@ -26,11 +28,14 @@ import { HttpClientModule } from "@angular/common/http"
   imports: [
     BrowserModule,
     AppRoutingModule,
-    //Brookes Imports
+    //Brooke's Imports
     MatCardModule,
 
     //Nathan's imports
     HttpClientModule,
+
+    //Gabriel's Imports
+    MatIconModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
