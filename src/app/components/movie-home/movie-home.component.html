@@ -1,6 +1,12 @@
 <div class="home-wrapper">
     <input placeholder="Search Movie" class="input-movie" />
 
+    <div class="nathansTestObservable">
+        <h2>Nathan's Test Observable</h2>
+        <p>{{nathansTestObservable$ | async | json}}</p>
+    </div>
+
+
     <div *ngFor="let section of browseMovies">
 
         <mat-card>

@@ -67,3 +67,5 @@ export enum MediaTypeHuman {
     TVEpisode = "TV Episode",
     TVSeries = "TV Series",
 }
+
+export type genre = null | string;

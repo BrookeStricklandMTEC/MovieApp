@@ -17,6 +17,7 @@ type section = {
 export class MovieHomeComponent {
 
   browseMovies: section[] = [];
+  nathansTestObservable$: Observable<any> | undefined;
 
   constructor(
     private movieService: MovieService
@@ -29,6 +30,8 @@ export class MovieHomeComponent {
       title: "scooby doo like movies:",
       movies: this.movieService.search("scooby doo")
     })
+
+    // this.nathansTestObservable$ = this.movieService.getGenres();
   }
 
 
