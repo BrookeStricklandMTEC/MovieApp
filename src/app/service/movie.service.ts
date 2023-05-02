@@ -5,6 +5,7 @@ import { Injectable } from '@angular/core';
 import { Observable, concat, defer, map, of, tap } from 'rxjs';
 import { Movie, Result, genre } from '../interfaces/movie';
 import { environment } from 'src/environments/environment.development';
+import { Friends } from '../interfaces/friends';
 // 
 
 
@@ -128,6 +129,26 @@ export class MovieService {
 
 	}
 
+<<<<<<< HEAD
+	getRecomendedFriends(movieId:string): Observable<Movie[]>{
+		const url = this.urlbase + "/titles/x/titles-by-ids";
+		return this.http.get<Result>(url, {
+			headers: this.headers,
+			// params: { id:encodeURIComponent(movieId), info: "mini_info" }
+			// params: { idsList: encodeURIComponent(movieId), info:"moreLikeThisTitles"}
+			// params: { idsList: encodeURIComponent(movieId)}
+			params: { idsList: encodeURIComponent(movieId), info:"plot"}
+		}).pipe(tap(console.log))
+		// .pipe(
+		// 	map<Result, Movie>(value => {
+		// 		return value.results[0]
+		// 	})
+		// )
+	}
+
+
+=======
+>>>>>>> d0c99608e4b3920d38b8d84d56a287b7dea87539
 	// ---------------------------------------------------------------------------------------------------- // 
 
 

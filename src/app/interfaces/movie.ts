@@ -11,7 +11,7 @@ export interface Movie {
     titleType:    TitleType;
     titleText:    TitleText;
     releaseYear:  ReleaseYear;
-    releaseDate:  ReleaseDate;
+    releaseDate:  ReleaseDate | null | undefined;
     favoritedByMe? : Boolean;
 }
 
