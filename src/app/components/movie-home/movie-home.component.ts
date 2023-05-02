@@ -44,39 +44,6 @@ movies: any;
   }
 
 
-// Scroll
-
-  // upcoming
-  rightUpcoming(): void {
-    document.getElementById('scroll-upcoming').scrollLeft += 215;
-  }
-
-  leftUpcoming(): void {
-    document.getElementById('scroll-upcoming').scrollLeft -= 215;
-  }
-  //
-
-  // genres
-  rightGenres(): void {
-    document.getElementById('scroll-genres').scrollLeft += 215;
-  }
-
-  leftGenres(): void {
-    document.getElementById('scroll-genres').scrollLeft -= 215;
-  }
-
-  //
-
-  //
-  rightPopular(): void {
-    document.getElementById('scroll-popular').scrollLeft += 215;
-  }
-
-  leftPopular(): void {
-    document.getElementById('scroll-popular').scrollLeft -= 215;
-  }
-  //
-
 }
 
 

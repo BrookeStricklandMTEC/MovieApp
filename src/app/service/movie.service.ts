@@ -97,12 +97,21 @@ export class MovieService {
 	// ---------------------- get movie by id, brookes movie details page ---------------------------------- //
 
 
-	// getById(movieId:string): Observable<Movie>{
-	// 	return this.http.get<Movie>(``,
-	// 	map(response => response['movies'])
-	// )}
+	getById(movieId:string): Observable<Movie>{
 
-	// movie: Movie
+		const url = this.urlbase + "/titles/%7B" + encodeURIComponent(movieId) + "%7B";
+
+		return this.http.get<Result>(url, {
+			headers: this.headers,
+			params: { exact: "false" }
+		}).pipe(
+			map<Result, Movie>(value => {
+				return value.results[0]
+			})
+		)
+
+	}
+
 
 
 	// ---------------------------------------------------------------------------------------------------- // 
