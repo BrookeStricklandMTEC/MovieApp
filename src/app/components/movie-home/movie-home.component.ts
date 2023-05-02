@@ -36,14 +36,6 @@ movies: any;
 
     // this.nathansTestObservable$ = this.movieService.getGenres();
   }
-
-  // movie added to favorites
-
-  favorited(): void{
-    
-  }
-
-
 }
 
 

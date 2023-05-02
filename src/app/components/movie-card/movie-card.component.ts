@@ -12,20 +12,12 @@ import { Movie } from 'src/app/interfaces/movie';
 export class MovieCardComponent {
   @Input() 
   movie : Movie;
-  movies: any; 
 
   constructor(
     private router: Router,
   ){
   }
 
-  goToMovieDetails(movie: Movie){
-    this.router.navigate(['./movieDetails', { movieId: movie.id}])
-  }
+  
 
-
-
-  favorited(): void{
-
-  }
 }

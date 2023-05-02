@@ -2,7 +2,6 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 // Brookes Imports 
-// import {enviornment}
 import { Observable, concat, defer, map, of, tap } from 'rxjs';
 import { Movie, Result, genre } from '../interfaces/movie';
 import { environment } from 'src/environments/environment.development';
@@ -111,8 +110,6 @@ export class MovieService {
 		)
 
 	}
-
-
 
 	// ---------------------------------------------------------------------------------------------------- // 
 

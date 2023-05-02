@@ -1,4 +1,4 @@
-<mat-card routerLink="movieDetails:movieId"
+<mat-card [routerLink]="['movieDetails', movie.movieId]"
 >
     <p>{{this.movie.titleText.text}}</p>
     <div class="material-symbols-outlined" id="favoriteIcon">
