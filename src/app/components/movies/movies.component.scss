@@ -21,7 +21,6 @@
 }
 
 
-
 .scrollmenu {
 
 
@@ -31,10 +30,16 @@
 
     scroll-snap-align: center;
     scroll-snap-type: mandatory;
+    scrollbar-width: none;
 
     display: flex;
     flex-wrap: nowrap;
     row-gap: 1em;
 
 
+}
+
+
+::-webkit-scrollbar {
+  display: none;
 }

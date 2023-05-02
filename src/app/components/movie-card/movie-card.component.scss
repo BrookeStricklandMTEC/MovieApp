@@ -3,7 +3,7 @@ mat-card {
     display: flex;
     flex-wrap: wrap;
     margin: 15px;
-    background-color: aqua;
+    background-color: var(--blue-color);
     width: 200px;
     height: 260px;
 }
@@ -20,7 +20,7 @@ mat-card {
     transition: flex-basis ease-in-out 1s;
 
     // display: block;
-    color: white;
+    color: var(--white-color);
     text-align: center;
     padding: 14px;
     text-decoration: none;
@@ -39,6 +39,7 @@ mat-card:hover {
     position: absolute;
     bottom: 25px;
     right: calc(50% - .5em);
+    cursor: pointer;
 
   font-variation-settings:
   'FILL' 0,
