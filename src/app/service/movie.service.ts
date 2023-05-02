@@ -116,9 +116,9 @@ export class MovieService {
 		return this.http.get<Result>(url, {
 			headers: this.headers,
 			// params: { id:encodeURIComponent(movieId), info: "mini_info" }
-			params: { idsList: encodeURIComponent(movieId), info:"moreLikeThisTitles"}
+			// params: { idsList: encodeURIComponent(movieId), info:"moreLikeThisTitles"}
 			// params: { idsList: encodeURIComponent(movieId)}
-			// params: { idsList: encodeURIComponent(movieId), info:"plot"}
+			params: { idsList: encodeURIComponent(movieId), info:"plot"}
 		}).pipe(tap(console.log))
 		// .pipe(
 		// 	map<Result, Movie>(value => {
