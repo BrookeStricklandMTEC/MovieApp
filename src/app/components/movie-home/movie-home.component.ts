@@ -19,6 +19,7 @@ export class MovieHomeComponent {
 
   browseMovies: section[] = [];
   nathansTestObservable$: Observable<any> | undefined;
+movies: any;
 
   constructor(
     private movieService: MovieService,
@@ -28,37 +29,53 @@ export class MovieHomeComponent {
   }
 
   ngOnInit() {
+    this.browseMovies.push({
+      title: "scooby doo like movies:",
+      movies: this.movieService.search("scooby doo")
+    })
 
     // this.nathansTestObservable$ = this.movieService.getGenres();
-
-    // this.nathansTestObservable$ = this.movieService.boxOfficeWeekend();
-
-    if(true){
-
-      this.browseMovies.push({
-        title: "this weekend:",
-        movies: this.movieService.boxOfficeWeekend()
-      })
-
-      this.browseMovies.push({
-        title: "top 250:",
-        movies: this.movieService.top250()
-      })
-
-      // this.browseMovies.push({
-      //   title: "scooby doo like movies:",
-      //   movies: this.movieService.search("scooby doo")
-      // })
-    }
   }
-
-  // go to movie details
-
-
 
   // movie added to favorites
 
+  favorited(): void{
+    
+  }
 
+
+// Scroll
+
+  // upcoming
+  rightUpcoming(): void {
+    document.getElementById('scroll-upcoming').scrollLeft += 215;
+  }
+
+  leftUpcoming(): void {
+    document.getElementById('scroll-upcoming').scrollLeft -= 215;
+  }
+  //
+
+  // genres
+  rightGenres(): void {
+    document.getElementById('scroll-genres').scrollLeft += 215;
+  }
+
+  leftGenres(): void {
+    document.getElementById('scroll-genres').scrollLeft -= 215;
+  }
+
+  //
+
+  //
+  rightPopular(): void {
+    document.getElementById('scroll-popular').scrollLeft += 215;
+  }
+
+  leftPopular(): void {
+    document.getElementById('scroll-popular').scrollLeft -= 215;
+  }
+  //
 
 }
 

@@ -1,5 +1,7 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, Input } from '@angular/core';
 import { Router } from '@angular/router';
+import { Observable, map } from 'rxjs';
 import { Movie } from 'src/app/interfaces/movie';
 
 @Component({
@@ -8,7 +10,9 @@ import { Movie } from 'src/app/interfaces/movie';
   styleUrls: ['./movie-card.component.scss']
 })
 export class MovieCardComponent {
-  @Input() movie : Movie;
+  @Input() 
+  movie : Movie;
+  movies: any; 
 
   constructor(
     private router: Router,
@@ -17,8 +21,8 @@ export class MovieCardComponent {
 
   goToMovieDetails(movie: Movie){
     this.router.navigate(['./movieDetails', { movieId: movie.id}])
-    // error for id ^
   }
+
 
 
   favorited(): void{

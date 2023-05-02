@@ -1,4 +1,3 @@
-
 mat-card {
     display: flex;
     flex-wrap: wrap;
@@ -8,8 +7,8 @@ mat-card {
     height: 260px;
 }
 
-p{
-white-space: normal;
+p {
+    white-space: normal;
 }
 
 
@@ -30,7 +29,7 @@ mat-card {
 
 mat-card:hover {
     background-color: #777;
-
+    cursor: pointer;
     flex-basis: 15rem;
 }
 
@@ -41,26 +40,26 @@ mat-card:hover {
     right: calc(50% - .5em);
     cursor: pointer;
 
-  font-variation-settings:
-  'FILL' 0,
-  'wght' 400,
-  'GRAD' 0,
-  'opsz' 48
+    font-variation-settings:
+        'FILL' 0,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 48
 }
 
 
-.material-symbols-outlined:hover{
+.material-symbols-outlined:hover {
     font-variation-settings:
-    'FILL' 1,
-    'wght' 400,
-    'GRAD' 0,
-    'opsz' 48
+        'FILL' 1,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 48
 }
 
 .material-symbols-filled {
     font-variation-settings:
-    'FILL' 1,
-    'wght' 400,
-    'GRAD' 0,
-    'opsz' 48
+        'FILL' 1,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 48
 }
