@@ -2,7 +2,6 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 // Brookes Imports 
-// import {enviornment}
 import { Observable, concat, defer, map, of, tap } from 'rxjs';
 import { Movie, Result, genre } from '../interfaces/movie';
 import { environment } from 'src/environments/environment.development';
@@ -99,20 +98,35 @@ export class MovieService {
 
 	getById(movieId:string): Observable<Movie>{
 
-		const url = this.urlbase + "/titles/%7B" + encodeURIComponent(movieId) + "%7B";
-
+		// const url = this.urlbase + "/titles/%7B" + encodeURIComponent(movieId) + "%7B";
+		const url = this.urlbase + "/titles/x/titles-by-ids";
 		return this.http.get<Result>(url, {
 			headers: this.headers,
-			params: { exact: "false" }
+			params: { idsList: encodeURIComponent(movieId)}
 		}).pipe(
 			map<Result, Movie>(value => {
 				return value.results[0]
 			})
 		)
-
 	}
 
+	getByIdDetailed(movieId:string): Observable<any>{
 
+		const url = this.urlbase + "/titles/x/titles-by-ids";
+		return this.http.get<Result>(url, {
+			headers: this.headers,
+			// params: { id:encodeURIComponent(movieId), info: "mini_info" }
+			// params: { idsList: encodeURIComponent(movieId), info:"moreLikeThisTitles"}
+			// params: { idsList: encodeURIComponent(movieId)}
+			params: { idsList: encodeURIComponent(movieId), info:"plot"}
+		}).pipe(tap(console.log))
+		// .pipe(
+		// 	map<Result, Movie>(value => {
+		// 		return value.results[0]
+		// 	})
+		// )
+
+	}
 
 	// ---------------------------------------------------------------------------------------------------- // 
 
