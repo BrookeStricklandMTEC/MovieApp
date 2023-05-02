@@ -54,16 +54,11 @@ export class MovieHomeComponent {
 
   // go to movie details
 
-    goToMovieDetails(movie: Movie){
-      this.router.navigate(['./movieDetails', { movieId: movie.id}])
-      // error for id ^ 
-    }
+
 
   // movie added to favorites
 
-  favorited(): void{
-    
-  }
+
 
 }
 

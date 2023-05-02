@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { Router } from '@angular/router';
 import { Movie } from 'src/app/interfaces/movie';
 
 @Component({
@@ -9,9 +10,18 @@ import { Movie } from 'src/app/interfaces/movie';
 export class MovieCardComponent {
   @Input() movie : Movie;
 
-  constructor(){
+  constructor(
+    private router: Router,
+  ){
+  }
 
+  goToMovieDetails(movie: Movie){
+    this.router.navigate(['./movieDetails', { movieId: movie.id}])
+    // error for id ^
   }
 
 
+  favorited(): void{
+
+  }
 }
