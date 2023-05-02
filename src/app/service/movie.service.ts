@@ -94,19 +94,6 @@ export class MovieService {
 	}
 
 
-	// ---------------------- get movie by id, brookes movie details page ---------------------------------- //
-
-
-	// getById(movieId:string): Observable<Movie>{
-	// 	return this.http.get<Movie>(``,
-	// 	map(response => response['movies'])
-	// )}
-
-	// movie: Movie
-
-
-	// ---------------------------------------------------------------------------------------------------- // 
-
 
 
 	/*
