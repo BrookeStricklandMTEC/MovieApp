@@ -29,12 +29,13 @@ movies: any;
   }
 
   ngOnInit() {
-    this.browseMovies.push({
-      title: "scooby doo like movies:",
-      movies: this.movieService.search("scooby doo")
-    })
+    // this.browseMovies.push({
+    //   title: "scooby doo like movies:",
+    //   movies: this.movieService.search("scooby doo")
+    // })
 
     // this.nathansTestObservable$ = this.movieService.getGenres();
+    this.nathansTestObservable$ = this.movieService.getByIdDetailed("tt6718170");
   }
 
   // movie added to favorites
