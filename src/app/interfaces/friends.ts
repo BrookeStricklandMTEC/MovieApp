@@ -24,13 +24,9 @@ export interface Edge {
     __typename: "MoreLikeThisEdge";
 }
 
-export interface Node {
-    id:                string;
-    titleText:         OriginalTitleText;
-    titleType:         TitleType;
-    originalTitleText: OriginalTitleText;
-    primaryImage:      PrimaryImage;
-    releaseYear:       ReleaseYear;
+export interface Node extends Movie.Movie{
+
+    originalTitleText: Movie.TitleText;
     ratingsSummary:    RatingsSummary;
     runtime:           Runtime;
     certificate:       Certificate;
@@ -51,42 +47,17 @@ export interface Certificate {
     __typename: "Certificate";
 }
 
-export interface OriginalTitleText {
+
+export interface GenreItem{
     text:       string;
-    __typename: OriginalTitleTextTypename;
+    GenreItem:  "GenreItem",
 }
 
-export enum OriginalTitleTextTypename {
-    GenreItem = "GenreItem",
-    TitleText = "TitleText",
-}
-
-export interface PrimaryImage {
-    id:         string;
-    width:      number;
-    height:     number;
-    url:        string;
-    caption:    Caption;
-    __typename: "Image";
-}
-
-
-
-export interface Caption {
-    plainText:  string;
-    __typename: "Markdown";
-}
 
 export interface RatingsSummary {
     aggregateRating: number;
     voteCount:       number;
     __typename:      "RatingsSummary";
-}
-
-export interface ReleaseYear {
-    year:       number;
-    endYear:    null;
-    __typename: "YearRange";
 }
 
 export interface Runtime {
@@ -100,28 +71,6 @@ export interface TitleGenres {
 }
 
 export interface Genre {
-    genre:      OriginalTitleText;
+    genre:      GenreItem;
     __typename: "TitleGenre";
-}
-
-export interface TitleType {
-    id:                  ID;
-    text:                Text;
-    canHaveEpisodes:     boolean;
-    displayableProperty: DisplayableProperty;
-    __typename:          "TitleType";
-}
-
-export interface DisplayableProperty {
-    value:      Caption;
-    __typename: "DisplayableTitleTypeProperty";
-}
-
-
-export enum ID {
-    Movie = "movie",
-}
-
-export enum Text {
-    Movie = "Movie",
 }
