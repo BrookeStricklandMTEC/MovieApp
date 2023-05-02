@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Router, ActivatedRoute } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 import { switchMap, tap } from 'rxjs';
 import { Movie } from 'src/app/interfaces/movie';
 import { MovieService } from 'src/app/service/movie.service';
@@ -15,7 +15,6 @@ export class MovieDetailsComponent {
 
   constructor(
     private movieService: MovieService,
-    private router: Router,
     private route:  ActivatedRoute,
   ) {}
 
@@ -23,7 +22,7 @@ export class MovieDetailsComponent {
 
     this.route.queryParams.pipe(
       switchMap(params => {
-        return this.movieService.getById(params["MovieId"])
+        return this.movieService.getById(params["movieId"])
       }),
       tap(movieResult => this.movie = movieResult)
     )

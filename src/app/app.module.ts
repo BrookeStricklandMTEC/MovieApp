@@ -22,9 +22,27 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MovieDetailsComponent } from './components/movie-details/movie-details.component';
 import { LoginComponent } from './components/login/login.component';
-import { RegisterComponent } from './components/register/register.component';
+import { SearchMovieComponent } from './components/search-movie/search-movie.component';
+import { firebase, firebaseui, FirebaseUIModule } from 'firebaseui-angular';
+import { AngularFireAuthModule } from '@angular/fire/compat/auth';
+import { AngularFireModule } from '@angular/fire/compat';
+import { environment } from 'src/environments/environment.development';
 
 
+const firebaseUiAuthConfig: firebaseui.auth.Config = {
+  signInFlow: 'popup',
+  signInOptions: [
+    firebase.auth.GoogleAuthProvider.PROVIDER_ID,
+
+    {
+      requireDisplayName: false,
+      provider: firebase.auth.EmailAuthProvider.PROVIDER_ID
+    },
+  ],
+  tosUrl: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
+  privacyPolicyUrl: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
+  credentialHelper: firebaseui.auth.CredentialHelper.GOOGLE_YOLO
+};
 @NgModule({
   declarations: [
     AppComponent,
@@ -35,7 +53,7 @@ import { RegisterComponent } from './components/register/register.component';
     MovieCardComponent,
     MovieDetailsComponent,
     LoginComponent,
-    RegisterComponent,
+    SearchMovieComponent,
   ],
   imports: [
     BrowserModule,
@@ -51,6 +69,9 @@ import { RegisterComponent } from './components/register/register.component';
     MatInputModule,
     MatFormFieldModule,
     BrowserAnimationsModule,
+    AngularFireAuthModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    FirebaseUIModule.forRoot(firebaseUiAuthConfig)
   ],
   providers: [],
   bootstrap: [AppComponent]

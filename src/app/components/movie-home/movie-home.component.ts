@@ -45,14 +45,6 @@ movies: any;
     // this.nathansTestObservable$ = this.movieService.getGenres();
     this.nathansTestObservable$ = this.movieService.getByIdDetailed("tt6718170");
   }
-
-  // movie added to favorites
-
-  favorited(): void{
-    
-  }
-
-
 }
 
 
