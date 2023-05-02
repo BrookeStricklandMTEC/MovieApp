@@ -29,10 +29,18 @@ movies: any;
   }
 
   ngOnInit() {
-    // this.browseMovies.push({
-    //   title: "scooby doo like movies:",
-    //   movies: this.movieService.search("scooby doo")
-    // })
+    this.browseMovies.push({
+      title: "batman like movies:",
+      movies: this.movieService.search("batman")
+    })
+    this.browseMovies.push({
+      title: "recent:",
+      movies: this.movieService.boxOfficeWeekend()
+    })
+    this.browseMovies.push({
+      title: "top 250:",
+      movies: this.movieService.top250()
+    })
 
     // this.nathansTestObservable$ = this.movieService.getGenres();
     this.nathansTestObservable$ = this.movieService.getByIdDetailed("tt6718170");
