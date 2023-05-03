@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { initializeApp } from "firebase/app";
-
+import { AngularFireAuth } from '@angular/fire/compat/auth';
 
 
 
@@ -20,8 +20,20 @@ export class FirestoreService {
   private app: (ReturnType<typeof initializeApp>);
 
 
-  constructor() {
+  constructor(
+    public afAuth: AngularFireAuth
+  ) {
     this.app = initializeApp(this.firebaseConfig);
+  };
+
+  SignIn(email, password) {
+    return this.afAuth
+    .signInWithEmailAndPassword(email, password)
+    .then((result) => {
+      console.log(result);
+    })
+    .catch((error) => {
+      window.alert(error.message);
+    });
   }
 }
-
