@@ -1,23 +1,21 @@
-<div class="detail-wrapper">
+<div class="detail-wrapper" >
 
 
-    <h1> {{movie.titleText.text}} </h1>
-
-    <h1> Avengers: Infinity War </h1>
+    <h1> {{this.movie.titleText.text}} </h1>
 
     <div class="head-wrap">
 
-        <h3> April 27th 2018 </h3>
-        <h3> PG-13 - </h3>
-        <h3> Movie </h3>
+        <h3> {{this.movie.releaseYear.year}} </h3>
+        <h3> {{this.movie.titleType.text}} </h3>
 
 
-        <div class="material-symbols-outlined" id="favoriteIcon">
-            favorite
+        <div class="favorite-wrap">
+            <div class="material-symbols-outlined" id="favoriteIcon">
+                favorite
+            </div>
+            1
+            <!-- like counter -->
         </div>
-
-        <h3> Favorites by me? Number of favorites </h3>
-
     </div>
 
 
@@ -53,3 +51,4 @@
         <app-movies> </app-movies>
 
     </div>
+</div>

@@ -11,35 +11,22 @@ import { MovieService } from 'src/app/service/movie.service';
 })
 export class MovieDetailsComponent {
 
-  movie: Movie | undefined;
+  movie: Movie | undefined
 
   constructor(
     private movieService: MovieService,
     private route:  ActivatedRoute,
   ) {}
 
-  // carosel
-
-  rightUpcoming(e:unknown): void {
-    //@ts-ignore
-    e.target.parentElement.previousSibling.scrollLeft += 215;
-  }
-
-  leftUpcoming(e:unknown): void {
-    //@ts-ignore
-    e.target.parentElement.nextSibling.scrollLeft -= 215;
-  }
-
-  //
 
   ngOnInit(){
-    this.route.queryParams.pipe(
+    this.route.paramMap.pipe(
       switchMap(params => {
-        return this.movieService.getById(params["movieId"])
+        return this.movieService.getById(params.get('id'))
       }),
-      tap(movieResult => this.movie = movieResult)
-    )
-   console.log(this.movie)
+      tap(console.log), 
+      tap(movieResult => this.movie = movieResult),
+  
+    ).subscribe()
   }
-
 }
