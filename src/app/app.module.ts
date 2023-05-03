@@ -10,6 +10,7 @@ import { MovieHomeComponent } from './components/movie-home/movie-home.component
 import { MoviesComponent } from './components/movies/movies.component';
 import { MatCardModule } from '@angular/material/card';
 import { MatIcon } from '@angular/material/icon';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 
 
 
@@ -61,7 +62,8 @@ const firebaseUiAuthConfig: firebaseui.auth.Config = {
     AppRoutingModule,
     //Brooke's Imports
     MatCardModule,
-
+    MatProgressSpinnerModule,
+  
     //Nathan's imports
     HttpClientModule,
 
