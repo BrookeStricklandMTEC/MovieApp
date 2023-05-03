@@ -29,21 +29,24 @@ movies: any;
   }
 
   ngOnInit() {
-    this.browseMovies.push({
-      title: "batman like movies:",
-      movies: this.movieService.search("batman")
-    })
-    this.browseMovies.push({
-      title: "recent:",
-      movies: this.movieService.boxOfficeWeekend()
-    })
-    this.browseMovies.push({
-      title: "top 250:",
-      movies: this.movieService.top250()
-    })
+    if(true){
+
+      this.browseMovies.push({
+        title: "batman like movies:",
+        movies: this.movieService.search("batman")
+      })
+      this.browseMovies.push({
+        title: "recent:",
+        movies: this.movieService.boxOfficeWeekend()
+      })
+      this.browseMovies.push({
+        title: "top 250:",
+        movies: this.movieService.top250()
+      })
+    }
 
     // this.nathansTestObservable$ = this.movieService.getGenres();
-    this.nathansTestObservable$ = this.movieService.getByIdDetailed("tt6718170");
+    // this.nathansTestObservable$ = this.movieService.getByIdDetailsTester("tt6718170");
   }
 }
 
