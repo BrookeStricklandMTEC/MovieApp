@@ -128,8 +128,6 @@ export class MovieService {
 		// )
 
 	}
-
-<<<<<<< HEAD
 	getRecomendedFriends(movieId:string): Observable<Movie[]>{
 		const url = this.urlbase + "/titles/x/titles-by-ids";
 		return this.http.get<Result>(url, {
@@ -145,10 +143,6 @@ export class MovieService {
 		// 	})
 		// )
 	}
-
-
-=======
->>>>>>> d0c99608e4b3920d38b8d84d56a287b7dea87539
 	// ---------------------------------------------------------------------------------------------------- // 
 
 

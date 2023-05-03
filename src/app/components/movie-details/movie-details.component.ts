@@ -18,14 +18,28 @@ export class MovieDetailsComponent {
     private route:  ActivatedRoute,
   ) {}
 
-  ngOnInit(){
+  // carosel
 
+  rightUpcoming(e:unknown): void {
+    //@ts-ignore
+    e.target.parentElement.previousSibling.scrollLeft += 215;
+  }
+
+  leftUpcoming(e:unknown): void {
+    //@ts-ignore
+    e.target.parentElement.nextSibling.scrollLeft -= 215;
+  }
+
+  //
+
+  ngOnInit(){
     this.route.queryParams.pipe(
       switchMap(params => {
         return this.movieService.getById(params["movieId"])
       }),
       tap(movieResult => this.movie = movieResult)
     )
-
+   console.log(this.movie)
   }
+
 }
