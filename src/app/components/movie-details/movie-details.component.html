@@ -1,5 +1,8 @@
 <div class="detail-wrapper">
 
+
+    <h1> {{movie.titleText.text}} </h1>
+
     <h1> Avengers: Infinity War </h1>
 
     <div class="head-wrap">
@@ -17,27 +20,36 @@
 
     </div>
 
-    <img src="../../../assets/detail-test.webp" alt="image here" />
 
-    <div class="detail-footer">
+    <div class="movie-grid">
 
-        <p class="description"> 
-            The Avengers and their allies must be willing to sacrifice all in an attempt to defeat the powerful Thanos
-            before his blitz of devastation and ruin puts an end to the universe. 
-        </p>
-        <p class="directors"> Directors:
-            Anthony Russo Joe Russo
-        </p>
+        <div class="row">
 
-        <p class="writers">
-            Writers:
-            Christopher Markus Stephen McFeely Stan Lee
-        </p>
-        <p class="stars">
-            Stars:
-            Robert Downey Jr. Chris Hemsworth Mark Ruffalo
-        </p>
+            <div class="main-img">
+                <img src="../../../assets/detail-test.webp" />
+            </div>
+
+            <div class="column">
+
+                <div class="sid-img">
+                    <img src="../../../assets/detail-test.webp" />
+                    <img src="../../../assets/detail-test.webp" />
+                    <img src="../../../assets/detail-test.webp" />
+                </div>
+
+            </div>
+
+        </div>
 
     </div>
 
-</div>
+
+    <div class="detail-footer">
+
+        <div class="detail-header">
+            <h3> More Like This </h3>
+        </div>
+
+        <app-movies> </app-movies>
+
+    </div>

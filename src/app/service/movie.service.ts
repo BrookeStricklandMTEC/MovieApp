@@ -3,9 +3,10 @@ import { Injectable } from '@angular/core';
 
 // Brookes Imports
 import { Observable, concat, defer, map, of, tap } from 'rxjs';
-import { Movie, Result, genre } from '../interfaces/movie';
+import { Image, Movie, Result, genre } from '../interfaces/movie';
 import { environment } from 'src/environments/environment.development';
 import { Friends } from '../interfaces/friends';
+import { Plot, PlotResult, TitleMainImagesResult } from '../interfaces/movie-metadata';
 //
 
 
@@ -110,41 +111,58 @@ export class MovieService {
 			})
 		)
 	}
+	// .pipe(tap(console.log))
 
-	getByIdDetailed(movieId:string): Observable<any>{
+	getByIdDetailsTester(movieId:string): Observable<any>{
 
 		const url = this.urlbase + "/titles/x/titles-by-ids";
 		return this.http.get<Result>(url, {
 			headers: this.headers,
-			// params: { id:encodeURIComponent(movieId), info: "mini_info" }
-			// params: { idsList: encodeURIComponent(movieId), info:"moreLikeThisTitles"}
-			// params: { idsList: encodeURIComponent(movieId)}
-			params: { idsList: encodeURIComponent(movieId), info:"plot"}
-		}).pipe(tap(console.log))
-		// .pipe(
-		// 	map<Result, Movie>(value => {
-		// 		return value.results[0]
-		// 	})
-		// )
+			// params: { idsList: encodeURIComponent(movieId), info:"primaryVideos"}
+			// params: { idsList: encodeURIComponent(movieId), info:"castPageTitle"}
+		}).pipe(
+			map<Result, Movie>(value => {
+				return value.results[0]
+			})
+		)
+	}
+	getIdMainImages(movieId:string): Observable<Image[]>{
 
+		const url = this.urlbase + "/titles/x/titles-by-ids";
+		return this.http.get<TitleMainImagesResult>(url, {
+			headers: this.headers,
+			params: { idsList: encodeURIComponent(movieId), info:"titleMainImages"}
+		}).pipe(
+			map<TitleMainImagesResult, Image[]>(value => {
+				return value.titleMainImages.edges.map(edge => edge.node)
+			})
+		)
+	}
+
+	doItForThePlot(movieId:string): Observable<Plot>{
+
+		const url = this.urlbase + "/titles/x/titles-by-ids";
+		return this.http.get<PlotResult>(url, {
+			headers: this.headers,
+			params: { idsList: encodeURIComponent(movieId), info:"plot"}
+		}).pipe(
+			map<PlotResult, Plot>(value => {
+				return value.results[0].plot
+			})
+		)
 	}
 
 	getRecomendedFriends(movieId:string): Observable<Movie[]>{
 		const url = this.urlbase + "/titles/x/titles-by-ids";
-		return this.http.get<Result>(url, {
+		return this.http.get<Friends>(url, {
 			headers: this.headers,
-			// params: { id:encodeURIComponent(movieId), info: "mini_info" }
-			// params: { idsList: encodeURIComponent(movieId), info:"moreLikeThisTitles"}
-			// params: { idsList: encodeURIComponent(movieId)}
-			params: { idsList: encodeURIComponent(movieId), info:"plot"}
-		}).pipe(tap(console.log))
-		// .pipe(
-		// 	map<Result, Movie>(value => {
-		// 		return value.results[0]
-		// 	})
-		// )
+			params: { idsList: encodeURIComponent(movieId), info:"moreLikeThisTitles"}
+		}).pipe(
+			map<Friends, Movie[]>(value => {
+				return value.results[0].moreLikeThisTitles.edges.map(edge => edge.node)
+			})
+		)
 	}
-
 
 	// ---------------------------------------------------------------------------------------------------- //
 

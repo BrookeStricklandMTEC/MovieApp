@@ -3,12 +3,13 @@ mat-card {
     flex-wrap: wrap;
     margin: 15px;
     background-color: var(--blue-color);
-    width: 200px;
-    height: 260px;
+    width: 275px;
+    height: 360px;
 }
 
 p {
     white-space: normal;
+    text-shadow: 1.5px 1px black;
 }
 
 
@@ -18,7 +19,6 @@ mat-card {
     flex-basis: 11rem;
     transition: flex-basis ease-in-out 1s;
 
-    // display: block;
     color: var(--white-color);
     text-align: center;
     padding: 14px;

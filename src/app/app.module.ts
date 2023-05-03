@@ -9,6 +9,8 @@ import { FavoriteMovieComponent } from './components/favorite-movie/favorite-mov
 import { MovieHomeComponent } from './components/movie-home/movie-home.component';
 import { MoviesComponent } from './components/movies/movies.component';
 import { MatCardModule } from '@angular/material/card';
+import { MatIcon } from '@angular/material/icon';
+
 
 
 // Nathan's imports
