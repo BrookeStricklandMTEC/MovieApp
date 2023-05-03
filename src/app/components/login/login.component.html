@@ -1,5 +1,5 @@
 <firebase-ui></firebase-ui>
-<!-- <div class="authBlock">
+<div class="authBlock">
   <h3>Sign In</h3>
   <div class="formGroup">
     <input
@@ -26,5 +26,8 @@
       value="Sign In"
       (click)="firestoreService.SignIn(userEmail.value, userPassword.value)"
       />
+      <button
+      (click)="GoogleSignIn()"
+      >Sign in with Google</button>
   </div>
-</div> -->
+</div>
