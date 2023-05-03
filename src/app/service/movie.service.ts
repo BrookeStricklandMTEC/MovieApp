@@ -1,13 +1,13 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
-// Brookes Imports 
+// Brookes Imports
 import { Observable, concat, defer, map, of, tap } from 'rxjs';
 import { Image, Movie, Result, genre } from '../interfaces/movie';
 import { environment } from 'src/environments/environment.development';
 import { Friends } from '../interfaces/friends';
 import { Plot, PlotResult, TitleMainImagesResult } from '../interfaces/movie-metadata';
-// 
+//
 
 
 
@@ -164,8 +164,7 @@ export class MovieService {
 		)
 	}
 
-
-	// ---------------------------------------------------------------------------------------------------- // 
+	// ---------------------------------------------------------------------------------------------------- //
 
 
 
