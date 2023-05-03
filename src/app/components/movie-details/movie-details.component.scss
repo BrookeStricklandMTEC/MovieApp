@@ -12,7 +12,7 @@ h1 {
     margin-bottom: 15px;
 }
 
-.favorite-wrap{
+.favorite-wrap {
     display: flex;
     align-items: center;
     gap: 10px;
@@ -34,26 +34,39 @@ h1 {
     gap: 15px;
 }
 
+.movie-grid {
+    height: 100%;
+    width: 100%;
+    border: 5px solid #fff;
 
-img{
-    width: 150px;
-    height: 150px;
+    display: flex;
+    flex-wrap: wrap;
 }
 
+.row {
+    display: flex;
+    flex-direction: row;
+}
 
+.column {
+    display: flex;
+    flex-direction: column;
+}
 
+.main-img {
+    height: 600px;
+    width: 530px;
+}
 
-// img { 
+.side-img{
+    height: 322px;
+    width: 700px;
+}
 
-//     width: 100%; 
-//     height: 80%;
-//     background-color: aqua;
-// }
 
 // favorite
 
-.favorite-wrap{
-}
+.favorite-wrap {}
 
 .material-symbols-outlined {
 
@@ -85,7 +98,9 @@ img{
 
 // detail footer
 
-.detail-header{
+.detail-header {
     display: flex;
     justify-content: center;
 }
+
+// load wrap

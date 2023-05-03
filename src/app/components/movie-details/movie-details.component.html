@@ -1,54 +1,61 @@
-<div class="detail-wrapper" >
+<!-- <ng-container *ngIf="detail-wrapper; else load-wrap"> -->
+    <div class="detail-wrapper">
 
 
-    <h1> {{this.movie.titleText.text}} </h1>
+        <h1> {{this.movie.titleText.text}} </h1>
 
-    <div class="head-wrap">
+        <div class="head-wrap">
 
-        <h3> {{this.movie.releaseYear.year}} </h3>
-        <h3> {{this.movie.titleType.text}} </h3>
+            <h3> {{this.movie.releaseYear.year}} </h3>
+            <h3> {{this.movie.titleType.text}} </h3>
 
 
-        <div class="favorite-wrap">
-            <div class="material-symbols-outlined" id="favoriteIcon">
-                favorite
+            <div class="favorite-wrap">
+                <div class="material-symbols-outlined" id="favoriteIcon">
+                    favorite
+                </div>
+                1
+                <!-- like counter -->
             </div>
-            1
-            <!-- like counter -->
         </div>
-    </div>
 
 
-    <div class="movie-grid">
+        <div class="movie-grid">
 
-        <div class="row">
+            <div class="row">
 
-            <div class="main-img">
-                <img src="../../../assets/detail-test.webp" />
-            </div>
+                <div class="main-img">
+                    <img class="main-img" src="../../../assets/detail-test.webp" />
+                </div>
 
-            <div class="column">
+                <div class="column">
 
-                <div class="sid-img">
-                    <img src="../../../assets/detail-test.webp" />
-                    <img src="../../../assets/detail-test.webp" />
-                    <img src="../../../assets/detail-test.webp" />
+                    <div class="side-img">
+                        <img class="side-img" src="../../../assets/img2.jpg" />
+                        <img class="side-img" src="../../../assets/img3.jpg" />
+                    </div>
+                    <!-- image slideshow -->
+
                 </div>
 
             </div>
 
         </div>
 
-    </div>
 
+        <div class="detail-footer">
 
-    <div class="detail-footer">
+            <div class="detail-header">
+                <h3> More Like This </h3>
+            </div>
 
-        <div class="detail-header">
-            <h3> More Like This </h3>
+            <app-movies> </app-movies>
+
         </div>
-
-        <app-movies> </app-movies>
-
     </div>
-</div>
+
+        <!-- <ng-template #loadWrap>
+            <mat-progress-spinner value="100" mode="determinate" />
+        </ng-template>
+
+</ng-container> -->
