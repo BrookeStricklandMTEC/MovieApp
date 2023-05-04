@@ -1,0 +1,110 @@
+.authBlock {
+  display: flex;
+  gap: 100px;
+  h3 {
+    font-size: 25px;
+  }
+}
+.emailSignIn {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  h3 {
+    align-self: flex-start;
+    margin-bottom: 20px;
+  }
+  .formGroup {
+    align-self: flex-end;
+  }
+
+}
+.otherSignIn {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  button {
+    border: 0;
+    padding: 0;
+    font-size: 100%;
+    background-color: inherit;
+  }
+}
+
+
+.btn {
+  align-self: center;
+  background-color: var(--blue-color);
+  background-image: none;
+  background-repeat: repeat no-repeat;
+  border-radius: 10px;
+  box-shadow: rgba(255, 255, 255, 0.2) 15px 28px 25px -18px;
+  box-sizing: border-box;
+  color: var(--white-color);
+  cursor: pointer;
+  display: inline-block;
+  font-family: Neucha, sans-serif;
+  font-size: 1rem;
+  line-height: 23px;
+  outline: none;
+  padding: 5px;
+  text-decoration: none;
+  transition: all 235ms ease-in-out;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.btn:hover {
+  box-shadow: rgba(255, 255, 255, 0.3) 2px 8px 8px -5px;
+  transform: translate3d(0, 2px, 0);
+}
+
+.btn:focus {
+  box-shadow: rgba(255, 255, 255, 0.3) 2px 8px 4px -6px;
+}
+
+// Google Button
+
+@import url(https://fonts.googleapis.com/css?family=Roboto:500);
+$google-blue: #4285f4;
+$button-active-blue: #1669F2;
+
+.google-btn {
+  width: 250px;
+  height: 42px;
+  background-color: $google-blue;
+  border-radius: 15px;
+  box-shadow: 0 3px 4px 0 rgba(0,0,0,.25);
+  .google-icon-wrapper {
+    position: absolute;
+    margin-top: 1px;
+    margin-left: 1px;
+    width: 40px;
+    height: 40px;
+    border-radius: 13px;
+    background-color: var(--white-color);
+  }
+  .google-icon {
+    position: absolute;
+    margin-top: 11px;
+    margin-left: -9px;
+    width: 18px;
+    height: 18px;
+  }
+  .btn-text {
+    float: right;
+    margin: 11px 46px 0 0;
+    color: var(--white-color);
+    font-size: 14px;
+    letter-spacing: 0.2px;
+    font-family: "Roboto";
+  }
+  &:hover {
+    box-shadow: 0 0 6px $google-blue;
+    cursor: pointer;
+  }
+  &:active {
+    background: $button-active-blue;
+  }
+}
