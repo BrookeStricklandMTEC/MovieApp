@@ -31,38 +31,45 @@
   }
 }
 
+// Sign In button
 
 .btn {
-  align-self: center;
-  background-color: var(--blue-color);
-  background-image: none;
-  background-repeat: repeat no-repeat;
-  border-radius: 10px;
-  box-shadow: rgba(255, 255, 255, 0.2) 15px 28px 25px -18px;
-  box-sizing: border-box;
-  color: var(--white-color);
-  cursor: pointer;
-  display: inline-block;
-  font-family: Neucha, sans-serif;
-  font-size: 1rem;
-  line-height: 23px;
-  outline: none;
-  padding: 5px;
-  text-decoration: none;
-  transition: all 235ms ease-in-out;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
+  font-size: 20px;
+  color: var(--blue-color) !important;
+  --mat-mdc-button-persistent-ripple-color: var(--blue-color);
+  --mat-mdc-button-ripple-color: rgba(63, 136, 197, 0.1);
 }
+// .btn {
+//   align-self: center;
+//   background-color: var(--blue-color);
+//   background-image: none;
+//   background-repeat: repeat no-repeat;
+//   border-radius: 10px;
+//   box-shadow: rgba(255, 255, 255, 0.2) 15px 28px 25px -18px;
+//   box-sizing: border-box;
+//   color: var(--white-color);
+//   cursor: pointer;
+//   display: inline-block;
+//   font-family: Neucha, sans-serif;
+//   font-size: 1rem;
+//   line-height: 23px;
+//   outline: none;
+//   padding: 5px;
+//   text-decoration: none;
+//   transition: all 235ms ease-in-out;
+//   user-select: none;
+//   -webkit-user-select: none;
+//   touch-action: manipulation;
+// }
 
-.btn:hover {
-  box-shadow: rgba(255, 255, 255, 0.3) 2px 8px 8px -5px;
-  transform: translate3d(0, 2px, 0);
-}
+// .btn:hover {
+//   box-shadow: rgba(255, 255, 255, 0.3) 2px 8px 8px -5px;
+//   transform: translate3d(0, 2px, 0);
+// }
 
-.btn:focus {
-  box-shadow: rgba(255, 255, 255, 0.3) 2px 8px 4px -6px;
-}
+// .btn:focus {
+//   box-shadow: rgba(255, 255, 255, 0.3) 2px 8px 4px -6px;
+// }
 
 // Google Button
 
@@ -72,7 +79,7 @@ $button-active-blue: #1669F2;
 
 .google-btn {
   width: 250px;
-  height: 42px;
+  height: 41px;
   background-color: $google-blue;
   border-radius: 15px;
   box-shadow: 0 3px 4px 0 rgba(0,0,0,.25);
