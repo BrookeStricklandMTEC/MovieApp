@@ -30,6 +30,7 @@ import { firebase, firebaseui, FirebaseUIModule } from 'firebaseui-angular';
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { AngularFireModule } from '@angular/fire/compat';
 import { environment } from 'src/environments/environment.development';
+import { ImageSliderComponent } from './components/image-slider/image-slider.component';
 
 
 const firebaseUiAuthConfig: firebaseui.auth.Config = {
@@ -56,6 +57,7 @@ const firebaseUiAuthConfig: firebaseui.auth.Config = {
     MovieDetailsComponent,
     LoginComponent,
     SearchMovieComponent,
+    ImageSliderComponent,
   ],
   imports: [
     BrowserModule,
