@@ -1,5 +1,5 @@
 .slide {
-  width: 600px;
+  width: 800px;
   height: 800px;
   border-radius: 10px;
   background-size: cover;
@@ -43,3 +43,29 @@
   cursor: pointer;
   font-size: 20px;
 }
+
+// arrows
+.scrollIcon:hover {
+  cursor: pointer;
+}
+
+.scrollIcon img {
+  width: 50px;
+  height: 60px;
+}
+
+//
+
+/* Fading animation */
+
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+//-----------------//

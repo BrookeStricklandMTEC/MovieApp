@@ -19,9 +19,11 @@ export class MovieDetailsComponent {
   ) {}
 
   slides: SlideInterface[] = [
-    { url: '../../../assets/img2.jpg', title: 'avengers2'},
-    { url: '../../../assets/img3.jpg', title: 'avengers3'},
-    { url: '../../../assets/detail-test.webp', title: 'avengers1'},
+    { url: '../../../assets/poster2.jpg', title: 'avengers2'},
+    { url: '../../../assets/poster3.webp', title: 'avengers3'},
+    { url: '../../../assets/poster4.jpg', title: 'avengers1'},
+    { url: '../../../assets/poster5.jpg', title: 'avengers4'},
+  
   ];
 
   ngOnInit(){

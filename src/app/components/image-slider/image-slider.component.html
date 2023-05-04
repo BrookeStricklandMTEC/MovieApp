@@ -1,7 +1,16 @@
 <div class="slider">
     <div>
-      <div (click)="goToPrevious()" class="leftArrow">❰</div>
-      <div (click)="goToNext()" class="rightArrow">❱</div>
+      <div (click)="goToPrevious()" class="leftArrow scrollIcon">
+        <img src="../../../assets/arrow-badge-left.png"
+        onmouseover="this.src='../../../assets/arrow-badge-left-filled.png';"
+        onmouseout="this.src='../../../assets/arrow-badge-left.png';" />
+      </div>
+      <div (click)="goToNext()" class="rightArrow scrollIcon">
+<img src="../../../assets/arrow-badge-right.png"
+                onmouseover="this.src='../../../assets/arrow-badge-right-filled.png';"
+                onmouseout="this.src='../../../assets/arrow-badge-right.png';" />
+
+      </div>
     </div>
     <div
       class="slide"
