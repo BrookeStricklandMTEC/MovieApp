@@ -10,6 +10,8 @@ h1 {
     display: flex;
     justify-content: center;
     margin-bottom: 15px;
+
+    font-size: 50px;
 }
 
 .favorite-wrap {
@@ -18,12 +20,15 @@ h1 {
     gap: 10px;
 }
 
-.head-wrap {
+.description-wrap {
+    font-size: 30px;
 
     display: flex;
-    justify-content: space-between;
-    gap: 50px;
-    margin: 35px 0px 15px 0px;
+    align-items: center;
+    flex-direction: column;
+
+    margin: 50px 0px 50px 180px;
+    gap: 30px;
 }
 
 .detail-footer {
@@ -55,12 +60,17 @@ h1 {
 
 .main-img {
     height: 800px;
-    width: 500px;
+    width: 550px;
 }
 
 .side-img{
     height: 322px;
     width: 700px;
+}
+
+img{
+    height: 800px;
+    width: 500px;
 }
 
 

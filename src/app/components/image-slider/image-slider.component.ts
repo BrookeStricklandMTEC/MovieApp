@@ -60,6 +60,6 @@ export class ImageSliderComponent {
   }
 
   getCurrentSlideUrl() {
-    return `url('${this.slides[this.currentIndex].url}')`;
+    return `url('${this.slides[this.currentIndex]?.url}')`;
   }
 }

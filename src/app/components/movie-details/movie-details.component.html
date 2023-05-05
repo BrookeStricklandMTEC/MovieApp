@@ -4,35 +4,35 @@
 
         <h1> {{this.movie.titleText.text}} </h1>
 
-        <div class="head-wrap">
-
-            <h3> {{this.movie.releaseYear.year}} </h3>
-            <h3> {{this.movie.titleType.text}} </h3>
-
-
-            <div class="favorite-wrap">
-                <div class="material-symbols-outlined" id="favoriteIcon">
-                    favorite
-                </div>
-                1
-                <!-- like counter -->
-            </div>
-        </div>
-
-       
-
-
         <div class="movie-grid">
 
             <div class="row">
 
-                <div class="main-img">
-                    <img class="main-img" src="../../../assets/poster.webp" />
+                <div class="main-img" >
+                   <img class="main-img"  *ngIf="this.movie.primaryImage === null" src="../../../assets/istockphoto-1355067151-612x612.jpg" />
+                   <img class="main-img" src={{this.movie.primaryImage.url}} />
                 </div>
 
-                <div class="column">
-                    <app-image-slider [slides]="slides"> </app-image-slider>
-                </div>
+                    <div class="description-wrap">
+
+                        <h3 *ngIf="this.movie.releaseDate === null"> To Be Released </h3>
+
+                        <h3> Released: {{this.movie.releaseDate.month}} / {{this.movie.releaseDate.day}} / {{this.movie.releaseYear.year}} </h3>
+                        
+                        <h3 *ngIf="this.movie.titleType.text === null"> To Be Released </h3>
+                        <h3> Type: {{this.movie.titleType.text}} </h3>
+
+                        <h3> Description: {{this.plot.plotText.plainText}} </h3>
+
+            
+            
+                        <div class="favorite-wrap">
+                            <div class="material-symbols-outlined" id="favoriteIcon">
+                                favorite
+                            </div>
+                        </div>
+                    </div>
+            
 
             </div>
 
