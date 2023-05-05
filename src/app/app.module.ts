@@ -32,6 +32,7 @@ import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { AngularFireModule } from '@angular/fire/compat';
 import { environment } from 'src/environments/environment.development';
 import { ImageSliderComponent } from './components/image-slider/image-slider.component';
+import { FormsModule } from '@angular/forms';
 
 
 const firebaseUiAuthConfig: firebaseui.auth.Config = {
@@ -78,7 +79,8 @@ const firebaseUiAuthConfig: firebaseui.auth.Config = {
     AngularFireAuthModule,
     AngularFireModule.initializeApp(environment.firebase),
     FirebaseUIModule.forRoot(firebaseUiAuthConfig),
-    MatButtonModule
+    MatButtonModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
