@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Movie, Result } from 'src/app/interfaces/movie';
 import { MovieService } from 'src/app/service/movie.service';
-import { Router, ParamMap } from '@angular/router'; 
+import { Router, ParamMap } from '@angular/router';
 
 type section = {
   title: string,
