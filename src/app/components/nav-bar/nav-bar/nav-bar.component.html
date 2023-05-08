@@ -1,5 +1,9 @@
 <nav class="nav-wrapper">
-  <img src="assets/cineplex_logo.png" height="100" width="130" />
+  <a routerLink="/">
+
+    <img src="assets/cineplex_logo.png" height="100" width="130" />
+
+  </a>
   <form>
     <input type="search" placeholder="Search Movie" [value]="search" class="input-movie" />
     <button mat-icon-button>
@@ -9,6 +13,6 @@
   <mat-icon><a routerLink="/">home</a></mat-icon>
   <mat-icon><a routerLink="/favoriteMovie">bookmark</a></mat-icon>
   <div>
-    <a href="/login"> Sign in </a>
+    <a routerLink="/login"> Sign in </a>
   </div>
 </nav>
