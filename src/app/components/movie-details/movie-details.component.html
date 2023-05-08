@@ -22,7 +22,9 @@
                         <h3 *ngIf="this.movie.titleType.text === null"> To Be Released </h3>
                         <h3> Type: {{this.movie.titleType.text}} </h3>
 
-                        <h3> Description: {{this.plot.plotText.plainText}} </h3>
+                        <div class="description-txt"> 
+                          <p>{{this.plot.plotText.plainText}} </p>  
+                        </div>
 
             
             
