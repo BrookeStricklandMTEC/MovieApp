@@ -19,6 +19,7 @@ import { HttpClientModule } from "@angular/common/http"
 
 // Gabriel's imports
 import { MatIconModule } from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
 import { MovieCardComponent } from './components/movie-card/movie-card.component'
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -31,6 +32,8 @@ import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { AngularFireModule } from '@angular/fire/compat';
 import { environment } from 'src/environments/environment.development';
 import { LikeButtonComponent } from './components/like-button/like-button.component';
+import { ImageSliderComponent } from './components/image-slider/image-slider.component';
+import { FormsModule } from '@angular/forms';
 
 
 const firebaseUiAuthConfig: firebaseui.auth.Config = {
@@ -58,6 +61,7 @@ const firebaseUiAuthConfig: firebaseui.auth.Config = {
     LoginComponent,
     SearchMovieComponent,
     LikeButtonComponent,
+    ImageSliderComponent,
   ],
   imports: [
     BrowserModule,
@@ -65,7 +69,7 @@ const firebaseUiAuthConfig: firebaseui.auth.Config = {
     //Brooke's Imports
     MatCardModule,
     MatProgressSpinnerModule,
-  
+
     //Nathan's imports
     HttpClientModule,
 
@@ -76,7 +80,9 @@ const firebaseUiAuthConfig: firebaseui.auth.Config = {
     BrowserAnimationsModule,
     AngularFireAuthModule,
     AngularFireModule.initializeApp(environment.firebase),
-    FirebaseUIModule.forRoot(firebaseUiAuthConfig)
+    FirebaseUIModule.forRoot(firebaseUiAuthConfig),
+    MatButtonModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -41,9 +41,9 @@ export class MovieService {
 	}
 
 
-	search(input: string) {
+	search(input: string): Observable<Result> {
 		//                                                      v-url paramater pollution avoidance
-		const url = this.urlbase + "/titles/search/title/%7B" + encodeURIComponent(input) + "%7B";
+		const url = this.urlbase + "/titles/search/title/%7B" + encodeURIComponent(input) + "%7D";
 
 		return this.http.get<Result>(url, {
 			headers: this.headers,

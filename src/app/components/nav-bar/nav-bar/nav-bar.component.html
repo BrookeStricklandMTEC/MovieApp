@@ -5,9 +5,9 @@
 
   </a>
   <form>
-    <input type="search" placeholder="Search Movie" [value]="search" class="input-movie" />
-    <button mat-icon-button>
-      <mat-icon>search</mat-icon>
+    <input [(ngModel)]="this.search" type="search" placeholder="Search Movie" name="search" class="input-movie" />
+    <button (click)="route()">
+      <mat-icon class="searchIcon">search</mat-icon>
     </button>
   </form>
   <mat-icon><a routerLink="/">home</a></mat-icon>
