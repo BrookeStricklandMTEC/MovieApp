@@ -9,6 +9,7 @@ export const environment = {
       appId: "1:1064192319400:web:6311b71641a9be75e7479d"
     },
     apikeys: {
-        moviesdatabase: "60f0512745msh0fa3e54040e3740p1f52d8jsnc6f609f823f5"
+        // moviesdatabase: "60f0512745msh0fa3e54040e3740p1f52d8jsnc6f609f823f5"
+        moviesdatabase: "646b478f6emsh96b828a3ba3ffadp1d5cb3jsn22a9fb077668"
     }
 };

@@ -31,6 +31,7 @@ import { firebase, firebaseui, FirebaseUIModule } from 'firebaseui-angular';
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { AngularFireModule } from '@angular/fire/compat';
 import { environment } from 'src/environments/environment.development';
+import { LikeButtonComponent } from './components/like-button/like-button.component';
 import { ImageSliderComponent } from './components/image-slider/image-slider.component';
 import { FormsModule } from '@angular/forms';
 
@@ -59,6 +60,7 @@ const firebaseUiAuthConfig: firebaseui.auth.Config = {
     MovieDetailsComponent,
     LoginComponent,
     SearchMovieComponent,
+    LikeButtonComponent,
     ImageSliderComponent,
   ],
   imports: [

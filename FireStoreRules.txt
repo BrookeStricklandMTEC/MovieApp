@@ -1,0 +1,81 @@
+// this is only done by hand, this is not linked in any way
+
+
+// allow create: if request.resource.data.keys().hasAll(['name', 'location', 'city']);
+rules_version = '2';
+service cloud.firestore {
+	match /databases/{ database }/documents {
+		match /{ document } {
+			allow write: if (
+				(
+					request.resource.data.movieId is string
+					&& request.resource.data.userId is string
+				)
+				&& (request.auth != null)
+				&& (request.auth.uid == request.resource.data.userId)
+			);
+			allow list: if request.query.limit <= 10;
+			allow get: if true;
+		}
+	}
+}
+
+
+
+
+rules_version = '2';
+service cloud.firestore {
+	match /databases/{ database }/documents {
+
+		match /favorited2/{idk=**} {
+			allow create: if (
+				request.auth != null &&
+				request.resource.id == request.auth.uid &&
+				request.resource.data.keys().hasOnly(["likes"]) &&
+				request.resource.data.keys().hasAll(["likes"]) &&
+				request.resource.data.likes is list
+			);
+			allow update: if (
+				request.auth != null &&
+				request.resource.id == request.auth.uid &&
+				request.resource.data.diff(resource.data).affectedKeys().hasOnly(["likes"]) &&
+				request.resource.data.likes is list
+				//no easy way to ensure type of all list elements
+			);
+			allow delete: if (
+				// request.auth != null &&
+				// request.resource.id == request.auth.uid
+				false
+			);
+			allow get: if (
+				request.auth != null
+				// request.resource.id == request.auth.uid &&
+				// path("/databases/favorited2/documents/$(docId)").bind({"docId": request.auth.uid}) == request.path
+			);
+		}
+	}
+}
+
+
+
+
+rules_version = '2';
+service cloud.firestore {
+	match /databases/{ database }/documents {
+		match /favorited2/{idk=**} {
+			allow read;
+			allow write;
+		}
+	}
+}
+
+databases/favorited2/documents/pmi3QuOwFvSzlxqEMIYgatmU2DC3
+databases/favorited2/documents/pmi3QuOwFvSzlxqEMIYgatmU2DC3
+
+// pmi3QuOwFvSzlxqEMIYgatmU2DC3
+// movieId:tt6718170
+
+
+// "/databases/favorited2/documents/pmi3QuOwFvSzlxqEMIYgatmU2DC3"
+// "/databases/favorited2/documents/pmi3QuOwFvSzlxqEMIYgatmU2DC3"
+/databases/%28default%29/documents/favorited2/pmi3QuOwFvSzlxqEMIYgatmU2DC3

@@ -2,7 +2,8 @@ import { Component } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Movie, Result } from 'src/app/interfaces/movie';
 import { MovieService } from 'src/app/service/movie.service';
-import { Router, ParamMap } from '@angular/router';
+import { Router, ParamMap } from '@angular/router'; 
+import { FirestoreService } from 'src/app/service/firestore.service';
 
 type section = {
   title: string,
@@ -24,6 +25,7 @@ movies: any;
   constructor(
     private movieService: MovieService,
     private router: Router,
+    private fireService: FirestoreService,
   ) {
 
   }
@@ -47,6 +49,9 @@ movies: any;
 
     // this.nathansTestObservable$ = this.movieService.getGenres();
     // this.nathansTestObservable$ = this.movieService.getByIdDetailsTester("tt6718170");
+  }
+  mario(){
+    this.fireService.likeMovie("tt6718170")
   }
 }
 
