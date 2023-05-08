@@ -10,6 +10,7 @@ import { MovieHomeComponent } from './components/movie-home/movie-home.component
 import { MoviesComponent } from './components/movies/movies.component';
 import { MatCardModule } from '@angular/material/card';
 import { MatIcon } from '@angular/material/icon';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 
 
 
@@ -18,6 +19,7 @@ import { HttpClientModule } from "@angular/common/http"
 
 // Gabriel's imports
 import { MatIconModule } from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
 import { MovieCardComponent } from './components/movie-card/movie-card.component'
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -29,13 +31,15 @@ import { firebase, firebaseui, FirebaseUIModule } from 'firebaseui-angular';
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { AngularFireModule } from '@angular/fire/compat';
 import { environment } from 'src/environments/environment.development';
+import { LikeButtonComponent } from './components/like-button/like-button.component';
+import { ImageSliderComponent } from './components/image-slider/image-slider.component';
+import { FormsModule } from '@angular/forms';
 
 
 const firebaseUiAuthConfig: firebaseui.auth.Config = {
   signInFlow: 'popup',
   signInOptions: [
     firebase.auth.GoogleAuthProvider.PROVIDER_ID,
-
     {
       requireDisplayName: false,
       provider: firebase.auth.EmailAuthProvider.PROVIDER_ID
@@ -56,12 +60,15 @@ const firebaseUiAuthConfig: firebaseui.auth.Config = {
     MovieDetailsComponent,
     LoginComponent,
     SearchMovieComponent,
+    LikeButtonComponent,
+    ImageSliderComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     //Brooke's Imports
     MatCardModule,
+    MatProgressSpinnerModule,
 
     //Nathan's imports
     HttpClientModule,
@@ -73,7 +80,9 @@ const firebaseUiAuthConfig: firebaseui.auth.Config = {
     BrowserAnimationsModule,
     AngularFireAuthModule,
     AngularFireModule.initializeApp(environment.firebase),
-    FirebaseUIModule.forRoot(firebaseUiAuthConfig)
+    FirebaseUIModule.forRoot(firebaseUiAuthConfig),
+    MatButtonModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

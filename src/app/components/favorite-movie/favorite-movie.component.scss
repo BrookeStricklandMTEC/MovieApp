@@ -1,0 +1,17 @@
+.favorite-wrapper {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+}
+
+.favorite-movie {
+    background-color: var(--blue-color);
+    width: 175px;
+    height: 260px;
+    margin: 15px;
+    aspect-ratio: 1;
+}
+
+.favorite-list {
+    grid-gap: 5px;
+}

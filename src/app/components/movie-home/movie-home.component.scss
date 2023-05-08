@@ -9,7 +9,12 @@
 }
 
 
-
+mat-card-header{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin: 15px;
+}
 
 .nathansTestObservable{
     background-color: crimson;

@@ -1,1 +1,46 @@
-<firebase-ui></firebase-ui>
+<div class="authBlock">
+  <div class="emailSignIn">
+  <h3>Use your email</h3>
+  <mat-form-field class="formGroup">
+    <mat-label>E-mail</mat-label>
+    <input
+      matInput
+      type="text"
+      class="formControl"
+      #userEmail
+      required
+    />
+  </mat-form-field>
+  <mat-form-field class="formGroup">
+    <mat-label>Password</mat-label>
+    <input
+      matInput
+      type="password"
+      class="formControl"
+      #userPassword
+      required
+    />
+  </mat-form-field>
+  <div class="formGroup">
+    <button
+      mat-button
+      class="btn btnPrimary"
+      color="accent"
+      (click)="firestoreService.SignIn(userEmail.value, userPassword.value)"
+    >Sign In</button>
+  </div>
+</div>
+<div class="otherSignIn">
+  <h3>...or Choose bellow</h3>
+  <button
+    (click)="GoogleSignIn()"
+  >
+    <div class="google-btn">
+      <div class="google-icon-wrapper">
+        <img class="google-icon" src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg"/>
+      </div>
+      <p class="btn-text"><b>Sign in with google</b></p>
+    </div>
+  </button>
+  </div>
+</div>

@@ -1,55 +1,57 @@
-<div class="detail-wrapper">
+<!-- <ng-container *ngIf="detail-wrapper; else load-wrap"> -->
+    <div class="detail-wrapper">
 
 
-    <h1> {{movie.titleText.text}} </h1>
+        <h1> {{this.movie.titleText.text}} </h1>
 
-    <h1> Avengers: Infinity War </h1>
+        <div class="movie-grid">
 
-    <div class="head-wrap">
+            <div class="row">
 
-        <h3> April 27th 2018 </h3>
-        <h3> PG-13 - </h3>
-        <h3> Movie </h3>
-
-
-        <div class="material-symbols-outlined" id="favoriteIcon">
-            favorite
-        </div>
-
-        <h3> Favorites by me? Number of favorites </h3>
-
-    </div>
-
-
-    <div class="movie-grid">
-
-        <div class="row">
-
-            <div class="main-img">
-                <img src="../../../assets/detail-test.webp" />
-            </div>
-
-            <div class="column">
-
-                <div class="sid-img">
-                    <img src="../../../assets/detail-test.webp" />
-                    <img src="../../../assets/detail-test.webp" />
-                    <img src="../../../assets/detail-test.webp" />
+                <div class="main-img" >
+                   <img class="main-img"  *ngIf="this.movie.primaryImage === null" src="../../../assets/istockphoto-1355067151-612x612.jpg" />
+                   <img class="main-img" src={{this.movie.primaryImage.url}} />
                 </div>
 
+                    <div class="description-wrap">
+
+                        <h3 *ngIf="this.movie.releaseDate === null"> To Be Released </h3>
+
+                        <h3> Released: {{this.movie.releaseDate.month}} / {{this.movie.releaseDate.day}} / {{this.movie.releaseYear.year}} </h3>
+                        
+                        <h3 *ngIf="this.movie.titleType.text === null"> To Be Released </h3>
+                        <h3> Type: {{this.movie.titleType.text}} </h3>
+
+                        <h3> Description: {{this.plot.plotText.plainText}} </h3>
+
+            
+            
+                        <div class="favorite-wrap">
+                            <div class="material-symbols-outlined" id="favoriteIcon">
+                                favorite
+                            </div>
+                        </div>
+                    </div>
+            
+
             </div>
 
         </div>
 
-    </div>
 
+        <div class="detail-footer">
 
-    <div class="detail-footer">
+            <div class="detail-header">
+                <h3> More Like This </h3>
+            </div>
 
-        <div class="detail-header">
-            <h3> More Like This </h3>
+            <app-movies> </app-movies>
+
         </div>
-
-        <app-movies> </app-movies>
-
     </div>
+
+        <!-- <ng-template #loadWrap>
+            <mat-progress-spinner value="100" mode="determinate" />
+        </ng-template>
+
+</ng-container> -->
