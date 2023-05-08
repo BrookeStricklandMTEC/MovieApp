@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Route } from '@angular/router';
+import { ActivatedRoute, Route, Router } from '@angular/router';
 import { MovieService } from 'src/app/service/movie.service';
 import { Observable, switchMap, tap } from 'rxjs';
 import { Result } from 'src/app/interfaces/movie';
@@ -16,7 +16,10 @@ export class SearchMovieComponent implements OnInit{
   constructor(
     private movieService: MovieService,
     private route: ActivatedRoute,
-  ) {}
+    private router: Router,
+  ) {
+    this.router.routeReuseStrategy.shouldReuseRoute = () => false;
+  }
 
   ngOnInit(){
     this.route.paramMap.pipe(
