@@ -2,9 +2,24 @@
 [routerLink]="['/movieDetails', this.movie.id]"
 >
 
-    <p>{{this.movie.titleText.text}}</p>
-    <div class="material-symbols-outlined" id="favoriteIcon">
-        favorite
+
+    <mat-card-header>
+        <mat-card-title>{{this.movie.titleText.text}}</mat-card-title>
+    </mat-card-header>
+
+    <div class="imageContainer">
+        <img mat-card-image *ngIf="this.movie.primaryImage; else noImagePlaceholder" [src]="this.movie.primaryImage.url" [alt]="this.movie.primaryImage.caption.plainText">
     </div>
 
+
+    <mat-card-footer>
+        <div class="material-symbols-outlined" id="favoriteIcon">
+            favorite
+        </div>
+    </mat-card-footer>
 </mat-card>
+
+
+<ng-template #noImagePlaceholder>
+    <img mat-card-image alt="api does not include an image placeholder" src="../../../assets/istockphoto-1355067151-612x612.jpg" />
+</ng-template>
