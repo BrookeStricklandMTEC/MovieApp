@@ -33,10 +33,10 @@ movies: any;
   ngOnInit() {
     if(true){
 
-      this.browseMovies.push({
-        title: "batman like movies:",
-        movies: this.movieService.search("batman")
-      })
+      // this.browseMovies.push({
+      //   title: "batman like movies:",
+      //   movies: this.movieService.search("batman")
+      // })
       this.browseMovies.push({
         title: "recent:",
         movies: this.movieService.boxOfficeWeekend()
